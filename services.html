@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Explore Aura Realty's comprehensive real estate services — residential sales, commercial real estate, property management, investment advisory, and more.">
+  <title>Our Services — Aura Realty</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ================================================================
+       SITE HEADER
+       ================================================================ -->
+  <header class="site-header" id="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="logo">
+        <div class="logo-icon"><i class="fas fa-gem"></i></div>
+        <span class="logo-text">Aura<span>Realty</span></span>
+      </a>
+
+      <nav class="nav-links" id="nav-links">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="listings.html" class="nav-link">Listings</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="services.html" class="nav-link active">Services</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+
+      <div class="header-actions">
+        <button class="auth-login-btn" data-open-modal="login-modal">Sign In</button>
+        <a href="#" class="btn btn--primary btn--sm auth-register-btn" data-open-modal="register-modal">Join Now</a>
+        <div class="auth-user-menu">
+          <i class="fas fa-user-circle"></i>
+          <span class="auth-user-name"></span>
+          <a href="#" class="auth-logout-btn">Logout</a>
+        </div>
+        <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle menu">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ================================================================
+       PAGE HEADER
+       ================================================================ -->
+  <section class="page-header">
+    <h1>Our Services</h1>
+    <div class="breadcrumb">
+      <a href="index.html">Home</a> / <span>Services</span>
+    </div>
+  </section>
+
+  <!-- ================================================================
+       SERVICES GRID
+       ================================================================ -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header animate-on-scroll">
+        <span class="section-header__tag">What We Offer</span>
+        <h2>Comprehensive Real Estate Solutions</h2>
+        <p>From buying your first home to managing an investment portfolio, we provide end-to-end services tailored to your needs.</p>
+      </div>
+
+      <div class="services-grid animate-on-scroll" id="services-grid">
+        <!-- Rendered by JS from SERVICES data -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ================================================================
+       HOW IT WORKS — Process Timeline
+       ================================================================ -->
+  <section class="section section--gray">
+    <div class="container">
+      <div class="section-header animate-on-scroll">
+        <span class="section-header__tag">Our Process</span>
+        <h2>How It Works</h2>
+        <p>Our streamlined process makes buying or selling a home simple, transparent, and stress-free.</p>
+      </div>
+
+      <div class="process-timeline animate-on-scroll">
+        <div class="timeline-step">
+          <div class="timeline-step__number">1</div>
+          <h4>Consultation</h4>
+          <p>Share your goals, budget, and preferences with a dedicated agent.</p>
+        </div>
+        <div class="timeline-step">
+          <div class="timeline-step__number">2</div>
+          <h4>Property Search</h4>
+          <p>We curate a personalized list of properties that match your criteria.</p>
+        </div>
+        <div class="timeline-step">
+          <div class="timeline-step__number">3</div>
+          <h4>Tours & Evaluation</h4>
+          <p>Visit your top picks with expert guidance and market analysis.</p>
+        </div>
+        <div class="timeline-step">
+          <div class="timeline-step__number">4</div>
+          <h4>Offer & Negotiation</h4>
+          <p>We craft competitive offers and handle all negotiations on your behalf.</p>
+        </div>
+        <div class="timeline-step">
+          <div class="timeline-step__number">5</div>
+          <h4>Closing</h4>
+          <p>Seamless closing process with full support from our team.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================================================================
+       FAQ ACCORDION
+       ================================================================ -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header animate-on-scroll">
+        <span class="section-header__tag">FAQ</span>
+        <h2>Frequently Asked Questions</h2>
+        <p>Find answers to common questions about our services and processes.</p>
+      </div>
+
+      <div class="faq-section animate-on-scroll">
+        <div class="accordion-item">
+          <div class="accordion-header">
+            <span>How do I get started with buying a home?</span>
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="accordion-body">
+            <div class="accordion-body__inner">
+              Getting started is easy! Simply contact us through our website or call our office. We'll schedule a free consultation where we'll discuss your goals, budget, timeline, and preferences. From there, we'll assign you a dedicated agent who specializes in your target area and price range.
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <div class="accordion-header">
+            <span>What areas do you serve?</span>
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="accordion-body">
+            <div class="accordion-body__inner">
+              Aura Realty currently operates in 12 major metropolitan areas across the United States, including Miami, New York, Los Angeles, Chicago, Boston, Austin, San Francisco, Seattle, and more. We're continuously expanding to new markets to better serve our clients.
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <div class="accordion-header">
+            <span>Do you offer virtual property tours?</span>
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="accordion-body">
+            <div class="accordion-body__inner">
+              Absolutely! We offer both 3D virtual tours and live video walkthroughs for all of our listed properties. This is especially helpful for out-of-state buyers or those with busy schedules. Contact your agent to schedule a virtual viewing at your convenience.
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <div class="accordion-header">
+            <span>What fees do buyers typically pay?</span>
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="accordion-body">
+            <div class="accordion-body__inner">
+              In most transactions, the seller pays the real estate commission, meaning buyers can use our services at no additional cost. However, buyers should budget for closing costs (typically 2-5% of the purchase price), which include appraisal fees, title insurance, and other processing fees. Your agent will provide a detailed breakdown early in the process.
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <div class="accordion-header">
+            <span>How long does the home buying process take?</span>
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="accordion-body">
+            <div class="accordion-body__inner">
+              The timeline varies depending on market conditions and individual circumstances. On average, the process from initial search to closing takes 60-90 days. However, with pre-approval in hand and a motivated seller, some transactions can close in as little as 30 days. Your agent will keep you informed every step of the way.
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <div class="accordion-header">
+            <span>Can you help with financing and mortgages?</span>
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="accordion-body">
+            <div class="accordion-body__inner">
+              While we are not a lending institution, we have established partnerships with top mortgage lenders and can connect you with trusted loan officers who offer competitive rates. We also provide guidance on pre-approval, down payment assistance programs, and financial planning resources.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================================================================
+       CTA
+       ================================================================ -->
+  <section class="cta-section">
+    <div class="container">
+      <h2>Let's Work Together</h2>
+      <p>Whether you're buying, selling, or investing, our team is ready to help you achieve your goals.</p>
+      <div style="display:flex; gap:16px; justify-content:center; position:relative; z-index:1;">
+        <a href="contact.html" class="btn btn--white btn--lg">Contact Us</a>
+        <a href="listings.html" class="btn btn--outline btn--lg" style="color:#fff; border-color:rgba(255,255,255,0.5);">View Listings</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================================================================
+       FOOTER
+       ================================================================ -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="logo">
+            <div class="logo-icon"><i class="fas fa-gem"></i></div>
+            <span class="logo-text">Aura<span>Realty</span></span>
+          </a>
+          <p>Your trusted partner in luxury real estate. We help you find the perfect property that matches your lifestyle and aspirations.</p>
+          <div class="footer-social">
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+        <div class="footer-column">
+          <h4>Quick Links</h4>
+          <a href="index.html">Home</a>
+          <a href="listings.html">Listings</a>
+          <a href="about.html">About Us</a>
+          <a href="services.html">Services</a>
+          <a href="contact.html">Contact</a>
+        </div>
+        <div class="footer-column">
+          <h4>Services</h4>
+          <a href="services.html">Residential Sales</a>
+          <a href="services.html">Commercial Real Estate</a>
+          <a href="services.html">Property Management</a>
+          <a href="services.html">Investment Advisory</a>
+          <a href="services.html">Relocation Services</a>
+        </div>
+        <div class="footer-column">
+          <h4>Contact</h4>
+          <a href="tel:+13055550100"><i class="fas fa-phone"></i> (305) 555-0100</a>
+          <a href="mailto:info@aurarealty.com"><i class="fas fa-envelope"></i> info@aurarealty.com</a>
+          <a href="#"><i class="fas fa-map-marker-alt"></i> 1234 Brickell Ave, Suite 500<br>&nbsp;&nbsp;&nbsp;&nbsp;Miami, FL 33131</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 Aura Realty. All rights reserved.</span>
+        <div class="footer-legal">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+          <a href="#">Accessibility</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ================================================================
+       MODALS
+       ================================================================ -->
+  <div class="modal-overlay" id="login-modal">
+    <div class="modal modal--sm">
+      <div class="modal-header"><h2>Welcome Back</h2><button class="modal-close" data-close-modal><i class="fas fa-times"></i></button></div>
+      <div class="modal-body">
+        <form id="login-form">
+          <div class="form-group"><label>Email</label><input type="email" name="email" placeholder="you@example.com" required></div>
+          <div class="form-group"><label>Password</label><input type="password" name="password" placeholder="Enter your password" required></div>
+          <button type="submit" class="btn btn--primary btn--full">Sign In</button>
+          <div class="form-message"></div>
+          <div class="form-footer">Don't have an account? <a href="#" data-switch-modal="register-modal">Create one</a></div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-overlay" id="register-modal">
+    <div class="modal modal--sm">
+      <div class="modal-header"><h2>Create Account</h2><button class="modal-close" data-close-modal><i class="fas fa-times"></i></button></div>
+      <div class="modal-body">
+        <form id="register-form">
+          <div class="form-group"><label>Full Name</label><input type="text" name="name" placeholder="John Doe" required></div>
+          <div class="form-group"><label>Email</label><input type="email" name="email" placeholder="you@example.com" required></div>
+          <div class="form-group"><label>Password</label><input type="password" name="password" placeholder="Create a password" required></div>
+          <div class="form-group"><label>Confirm Password</label><input type="password" name="confirmPassword" placeholder="Confirm password" required></div>
+          <div class="form-group"><label>I am a</label><select name="role"><option value="client">Home Buyer / Renter</option><option value="agent">Real Estate Agent</option></select></div>
+          <button type="submit" class="btn btn--primary btn--full">Create Account</button>
+          <div class="form-message"></div>
+          <div class="form-footer">Already have an account? <a href="#" data-switch-modal="login-modal">Sign in</a></div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+
+</body>
+</html>

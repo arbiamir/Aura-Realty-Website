@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Aura Realty — Your trusted partner in finding the perfect home. Browse luxury real estate listings, connect with expert agents, and discover your dream property.">
+  <title>Aura Realty — Find Your Dream Home</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ================================================================
+       SITE HEADER — Sticky navigation with transparent hero overlay
+       ================================================================ -->
+  <header class="site-header header--transparent" id="site-header">
+    <div class="header-inner">
+      <!-- Logo -->
+      <a href="index.html" class="logo">
+        <div class="logo-icon"><i class="fas fa-gem"></i></div>
+        <span class="logo-text">Aura<span>Realty</span></span>
+      </a>
+
+      <!-- Navigation Links -->
+      <nav class="nav-links" id="nav-links">
+        <a href="index.html" class="nav-link active">Home</a>
+        <a href="listings.html" class="nav-link">Listings</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="services.html" class="nav-link">Services</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+
+      <!-- Auth & Mobile Toggle -->
+      <div class="header-actions">
+        <button class="auth-login-btn" data-open-modal="login-modal">Sign In</button>
+        <a href="#" class="btn btn--primary btn--sm auth-register-btn" data-open-modal="register-modal">Join Now</a>
+        <div class="auth-user-menu">
+          <i class="fas fa-user-circle"></i>
+          <span class="auth-user-name"></span>
+          <a href="#" class="auth-logout-btn">Logout</a>
+        </div>
+        <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle menu">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ================================================================
+       HERO SECTION — Full-width banner with search bar
+       ================================================================ -->
+  <section class="hero" id="hero">
+    <div class="hero-content">
+      <div class="hero-badge"><i class="fas fa-crown"></i> Premium Real Estate Experience</div>
+      <h1>Discover Your <span>Perfect Home</span></h1>
+      <p>Explore thousands of luxury properties across the nation. Let our expert agents guide you to the home you've always dreamed of.</p>
+
+      <!-- Hero Search Box -->
+      <div class="hero-search">
+        <form id="hero-search-form">
+          <div class="hero-search__input">
+            <i class="fas fa-search"></i>
+            <input type="text" name="location" placeholder="City, neighborhood, zip, or address" autocomplete="off">
+          </div>
+          <select class="hero-search__select" name="type">
+            <option value="">All Types</option>
+            <option value="House">House</option>
+            <option value="Condo">Condo</option>
+            <option value="Apartment">Apartment</option>
+            <option value="Townhouse">Townhouse</option>
+          </select>
+          <button type="submit" class="btn btn--primary"><i class="fas fa-search"></i> Search</button>
+        </form>
+      </div>
+
+      <!-- Hero Stats -->
+      <div class="hero-stats">
+        <div class="hero-stat">
+          <span class="hero-stat__number" data-count="2500" data-suffix="+">0</span>
+          <span class="hero-stat__label">Properties Listed</span>
+        </div>
+        <div class="hero-stat">
+          <span class="hero-stat__number" data-count="1200" data-suffix="+">0</span>
+          <span class="hero-stat__label">Happy Clients</span>
+        </div>
+        <div class="hero-stat">
+          <span class="hero-stat__number" data-count="50" data-suffix="+">0</span>
+          <span class="hero-stat__label">Expert Agents</span>
+        </div>
+        <div class="hero-stat">
+          <span class="hero-stat__number" data-count="15" data-suffix="">0</span>
+          <span class="hero-stat__label">Years Experience</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================================================================
+       FEATURED PROPERTIES — Carousel of featured listings
+       ================================================================ -->
+  <section class="section" id="featured">
+    <div class="container">
+      <div class="section-header animate-on-scroll">
+        <span class="section-header__tag">Featured Properties</span>
+        <h2>Handpicked Homes for You</h2>
+        <p>Explore our curated selection of premium properties, chosen by our expert agents for their exceptional value and appeal.</p>
+      </div>
+
+      <div class="carousel animate-on-scroll">
+        <button class="carousel-btn carousel-btn--prev" id="carousel-prev"><i class="fas fa-chevron-left"></i></button>
+        <div class="carousel-track" id="carousel-track"></div>
+        <button class="carousel-btn carousel-btn--next" id="carousel-next"><i class="fas fa-chevron-right"></i></button>
+      </div>
+
+      <div style="text-align:center; margin-top:32px;">
+        <a href="listings.html" class="btn btn--outline">View All Listings <i class="fas fa-arrow-right"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================================================================
+       WHY CHOOSE US — Feature grid
+       ================================================================ -->
+  <section class="section section--gray" id="why-choose">
+    <div class="container">
+      <div class="section-header animate-on-scroll">
+        <span class="section-header__tag">Why Aura Realty</span>
+        <h2>Why Thousands Trust Us</h2>
+        <p>We combine local expertise, innovative technology, and personalized service to deliver an unmatched real estate experience.</p>
+      </div>
+
+      <div class="features-grid animate-on-scroll">
+        <div class="feature-card">
+          <div class="feature-card__icon"><i class="fas fa-shield-alt"></i></div>
+          <h3>Trusted Agents</h3>
+          <p>Every agent is rigorously trained and background-checked for your peace of mind.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-card__icon"><i class="fas fa-chart-line"></i></div>
+          <h3>Market Insights</h3>
+          <p>Data-driven analysis helps you make smart decisions at the right time.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-card__icon"><i class="fas fa-home"></i></div>
+          <h3>Premium Listings</h3>
+          <p>Access exclusive properties before they hit the open market.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-card__icon"><i class="fas fa-headset"></i></div>
+          <h3>24/7 Support</h3>
+          <p>Our dedicated support team is always here to answer your questions.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================================================================
+       NEIGHBORHOODS — Spotlight grid
+       ================================================================ -->
+  <section class="section" id="neighborhoods">
+    <div class="container">
+      <div class="section-header animate-on-scroll">
+        <span class="section-header__tag">Explore</span>
+        <h2>Popular Neighborhoods</h2>
+        <p>Discover vibrant communities and find the perfect neighborhood that fits your lifestyle.</p>
+      </div>
+
+      <div class="neighborhoods-grid animate-on-scroll" id="neighborhoods-grid">
+        <!-- Rendered by JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ================================================================
+       TESTIMONIALS — Client reviews
+       ================================================================ -->
+  <section class="section section--gray" id="testimonials">
+    <div class="container">
+      <div class="section-header animate-on-scroll">
+        <span class="section-header__tag">Testimonials</span>
+        <h2>What Our Clients Say</h2>
+        <p>Real stories from real clients who found their dream homes with Aura Realty.</p>
+      </div>
+
+      <div class="testimonials-grid animate-on-scroll" id="testimonials-container">
+        <!-- Rendered by JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ================================================================
+       CTA — Newsletter signup
+       ================================================================ -->
+  <section class="cta-section">
+    <div class="container">
+      <h2>Stay Ahead of the Market</h2>
+      <p>Subscribe to receive exclusive listings, market reports, and insider tips.</p>
+      <form class="newsletter-form" id="newsletter-form">
+        <input type="email" placeholder="Enter your email address" required>
+        <button type="submit" class="btn">Subscribe <i class="fas fa-paper-plane"></i></button>
+      </form>
+    </div>
+  </section>
+
+  <!-- ================================================================
+       FOOTER
+       ================================================================ -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <!-- Brand Column -->
+        <div class="footer-brand">
+          <a href="index.html" class="logo">
+            <div class="logo-icon"><i class="fas fa-gem"></i></div>
+            <span class="logo-text">Aura<span>Realty</span></span>
+          </a>
+          <p>Your trusted partner in luxury real estate. We help you find the perfect property that matches your lifestyle and aspirations.</p>
+          <div class="footer-social">
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="footer-column">
+          <h4>Quick Links</h4>
+          <a href="index.html">Home</a>
+          <a href="listings.html">Listings</a>
+          <a href="about.html">About Us</a>
+          <a href="services.html">Services</a>
+          <a href="contact.html">Contact</a>
+        </div>
+
+        <!-- Services -->
+        <div class="footer-column">
+          <h4>Services</h4>
+          <a href="services.html">Residential Sales</a>
+          <a href="services.html">Commercial Real Estate</a>
+          <a href="services.html">Property Management</a>
+          <a href="services.html">Investment Advisory</a>
+          <a href="services.html">Relocation Services</a>
+        </div>
+
+        <!-- Contact Info -->
+        <div class="footer-column">
+          <h4>Contact</h4>
+          <a href="tel:+13055550100"><i class="fas fa-phone"></i> (305) 555-0100</a>
+          <a href="mailto:info@aurarealty.com"><i class="fas fa-envelope"></i> info@aurarealty.com</a>
+          <a href="#"><i class="fas fa-map-marker-alt"></i> 1234 Brickell Ave, Suite 500<br>&nbsp;&nbsp;&nbsp;&nbsp;Miami, FL 33131</a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>&copy; 2026 Aura Realty. All rights reserved.</span>
+        <div class="footer-legal">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+          <a href="#">Accessibility</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ================================================================
+       MODALS — Login, Register, Property Detail
+       ================================================================ -->
+
+  <!-- Login Modal -->
+  <div class="modal-overlay" id="login-modal">
+    <div class="modal modal--sm">
+      <div class="modal-header">
+        <h2>Welcome Back</h2>
+        <button class="modal-close" data-close-modal><i class="fas fa-times"></i></button>
+      </div>
+      <div class="modal-body">
+        <form id="login-form">
+          <div class="form-group">
+            <label for="login-email">Email Address</label>
+            <input type="email" id="login-email" name="email" placeholder="you@example.com" required>
+          </div>
+          <div class="form-group">
+            <label for="login-password">Password</label>
+            <input type="password" id="login-password" name="password" placeholder="Enter your password" required>
+          </div>
+          <button type="submit" class="btn btn--primary btn--full">Sign In</button>
+          <div class="form-message"></div>
+          <div class="form-footer">
+            Don't have an account? <a href="#" data-switch-modal="register-modal">Create one</a>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Register Modal -->
+  <div class="modal-overlay" id="register-modal">
+    <div class="modal modal--sm">
+      <div class="modal-header">
+        <h2>Create Account</h2>
+        <button class="modal-close" data-close-modal><i class="fas fa-times"></i></button>
+      </div>
+      <div class="modal-body">
+        <form id="register-form">
+          <div class="form-group">
+            <label for="register-name">Full Name</label>
+            <input type="text" id="register-name" name="name" placeholder="John Doe" required>
+          </div>
+          <div class="form-group">
+            <label for="register-email">Email Address</label>
+            <input type="email" id="register-email" name="email" placeholder="you@example.com" required>
+          </div>
+          <div class="form-group">
+            <label for="register-password">Password</label>
+            <input type="password" id="register-password" name="password" placeholder="Create a password" required>
+          </div>
+          <div class="form-group">
+            <label for="register-confirm">Confirm Password</label>
+            <input type="password" id="register-confirm" name="confirmPassword" placeholder="Confirm your password" required>
+          </div>
+          <div class="form-group">
+            <label for="register-role">I am a</label>
+            <select id="register-role" name="role">
+              <option value="client">Home Buyer / Renter</option>
+              <option value="agent">Real Estate Agent</option>
+            </select>
+          </div>
+          <button type="submit" class="btn btn--primary btn--full">Create Account</button>
+          <div class="form-message"></div>
+          <div class="form-footer">
+            Already have an account? <a href="#" data-switch-modal="login-modal">Sign in</a>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Property Detail Modal -->
+  <div class="modal-overlay" id="property-detail-modal">
+    <div class="modal modal--xl">
+      <div class="modal-header">
+        <h2>Property Details</h2>
+        <button class="modal-close" data-close-modal><i class="fas fa-times"></i></button>
+      </div>
+      <div class="modal-body">
+        <!-- Populated dynamically by JS -->
+      </div>
+    </div>
+  </div>
+
+  <!-- ================================================================
+       SCRIPTS
+       ================================================================ -->
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+
+</body>
+</html>

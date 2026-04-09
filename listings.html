@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Browse luxury real estate listings with Aura Realty. Filter by location, price, property type, bedrooms and more. Interactive map view available.">
+  <title>Property Listings — Aura Realty</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Leaflet.js CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ================================================================
+       SITE HEADER
+       ================================================================ -->
+  <header class="site-header" id="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="logo">
+        <div class="logo-icon"><i class="fas fa-gem"></i></div>
+        <span class="logo-text">Aura<span>Realty</span></span>
+      </a>
+
+      <nav class="nav-links" id="nav-links">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="listings.html" class="nav-link active">Listings</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="services.html" class="nav-link">Services</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+
+      <div class="header-actions">
+        <button class="auth-login-btn" data-open-modal="login-modal">Sign In</button>
+        <a href="#" class="btn btn--primary btn--sm auth-register-btn" data-open-modal="register-modal">Join Now</a>
+        <div class="auth-user-menu">
+          <i class="fas fa-user-circle"></i>
+          <span class="auth-user-name"></span>
+          <a href="#" class="auth-logout-btn">Logout</a>
+        </div>
+        <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle menu">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ================================================================
+       LISTINGS PAGE LAYOUT
+       ================================================================ -->
+  <div class="listings-page">
+    <div class="listings-layout">
+
+      <!-- ─── Filter Sidebar ─── -->
+      <aside class="filter-sidebar" id="filter-sidebar">
+        <h2>
+          Filters
+          <button class="btn btn--ghost btn--sm" id="clear-filters">Clear All</button>
+        </h2>
+
+        <!-- Location -->
+        <div class="filter-group">
+          <label for="filter-location">Location</label>
+          <input type="text" id="filter-location" class="filter-control" placeholder="City, state, or zip">
+        </div>
+
+        <!-- Price Range -->
+        <div class="filter-group">
+          <label>Price Range</label>
+          <div class="price-range">
+            <input type="number" id="filter-min-price" class="filter-control" placeholder="Min" step="50000">
+            <span>—</span>
+            <input type="number" id="filter-max-price" class="filter-control" placeholder="Max" step="50000">
+          </div>
+        </div>
+
+        <!-- Property Type -->
+        <div class="filter-group">
+          <label for="filter-type">Property Type</label>
+          <select id="filter-type" class="filter-control">
+            <option value="">All Types</option>
+            <option value="House">House</option>
+            <option value="Condo">Condo</option>
+            <option value="Apartment">Apartment</option>
+            <option value="Townhouse">Townhouse</option>
+          </select>
+        </div>
+
+        <!-- Bedrooms -->
+        <div class="filter-group">
+          <label for="filter-beds">Bedrooms</label>
+          <select id="filter-beds" class="filter-control">
+            <option value="0">Any</option>
+            <option value="1">1+</option>
+            <option value="2">2+</option>
+            <option value="3">3+</option>
+            <option value="4">4+</option>
+            <option value="5">5+</option>
+          </select>
+        </div>
+
+        <!-- Bathrooms -->
+        <div class="filter-group">
+          <label for="filter-baths">Bathrooms</label>
+          <select id="filter-baths" class="filter-control">
+            <option value="0">Any</option>
+            <option value="1">1+</option>
+            <option value="2">2+</option>
+            <option value="3">3+</option>
+            <option value="4">4+</option>
+          </select>
+        </div>
+      </aside>
+
+      <!-- ─── Main Content ─── -->
+      <div class="listings-content">
+
+        <!-- Toolbar -->
+        <div class="listings-toolbar">
+          <div class="listings-toolbar__left">
+            <span id="results-count">0 properties found</span>
+          </div>
+          <div class="listings-toolbar__right">
+            <!-- Map / List Toggle -->
+            <div class="map-list-toggle">
+              <button id="toggle-list" class="active"><i class="fas fa-th-list"></i> List</button>
+              <button id="toggle-map"><i class="fas fa-map"></i> Map</button>
+            </div>
+
+            <!-- Grid / List View -->
+            <div class="view-toggle">
+              <button id="view-grid" class="active" aria-label="Grid view"><i class="fas fa-th-large"></i></button>
+              <button id="view-list" aria-label="List view"><i class="fas fa-bars"></i></button>
+            </div>
+
+            <!-- Sort -->
+            <select id="filter-sort" class="filter-control" style="padding:8px 12px; border:1px solid var(--color-gray-200); border-radius:var(--radius-md); font-size:13px; min-width:150px;">
+              <option value="featured">Featured First</option>
+              <option value="price-asc">Price: Low to High</option>
+              <option value="price-desc">Price: High to Low</option>
+              <option value="newest">Newest</option>
+              <option value="largest">Largest</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Map Panel (hidden by default, toggled by button) -->
+        <div class="listings-map-panel">
+          <div id="listings-map"></div>
+        </div>
+
+        <!-- Results Grid -->
+        <div class="listings-results">
+          <div class="listings-grid grid-view" id="listings-grid">
+            <!-- Property cards rendered by JS -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile Filter Toggle Button -->
+  <button class="filter-toggle" id="filter-toggle">
+    <i class="fas fa-sliders-h"></i> Filters
+  </button>
+
+  <!-- ================================================================
+       MODALS — Login, Register, Property Detail
+       ================================================================ -->
+  <!-- Login Modal -->
+  <div class="modal-overlay" id="login-modal">
+    <div class="modal modal--sm">
+      <div class="modal-header">
+        <h2>Welcome Back</h2>
+        <button class="modal-close" data-close-modal><i class="fas fa-times"></i></button>
+      </div>
+      <div class="modal-body">
+        <form id="login-form">
+          <div class="form-group">
+            <label for="login-email">Email Address</label>
+            <input type="email" id="login-email" name="email" placeholder="you@example.com" required>
+          </div>
+          <div class="form-group">
+            <label for="login-password">Password</label>
+            <input type="password" id="login-password" name="password" placeholder="Enter your password" required>
+          </div>
+          <button type="submit" class="btn btn--primary btn--full">Sign In</button>
+          <div class="form-message"></div>
+          <div class="form-footer">
+            Don't have an account? <a href="#" data-switch-modal="register-modal">Create one</a>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Register Modal -->
+  <div class="modal-overlay" id="register-modal">
+    <div class="modal modal--sm">
+      <div class="modal-header">
+        <h2>Create Account</h2>
+        <button class="modal-close" data-close-modal><i class="fas fa-times"></i></button>
+      </div>
+      <div class="modal-body">
+        <form id="register-form">
+          <div class="form-group">
+            <label for="reg-name">Full Name</label>
+            <input type="text" id="reg-name" name="name" placeholder="John Doe" required>
+          </div>
+          <div class="form-group">
+            <label for="reg-email">Email Address</label>
+            <input type="email" id="reg-email" name="email" placeholder="you@example.com" required>
+          </div>
+          <div class="form-group">
+            <label for="reg-password">Password</label>
+            <input type="password" id="reg-password" name="password" placeholder="Create a password" required>
+          </div>
+          <div class="form-group">
+            <label for="reg-confirm">Confirm Password</label>
+            <input type="password" id="reg-confirm" name="confirmPassword" placeholder="Confirm your password" required>
+          </div>
+          <div class="form-group">
+            <label for="reg-role">I am a</label>
+            <select id="reg-role" name="role">
+              <option value="client">Home Buyer / Renter</option>
+              <option value="agent">Real Estate Agent</option>
+            </select>
+          </div>
+          <button type="submit" class="btn btn--primary btn--full">Create Account</button>
+          <div class="form-message"></div>
+          <div class="form-footer">
+            Already have an account? <a href="#" data-switch-modal="login-modal">Sign in</a>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Property Detail Modal -->
+  <div class="modal-overlay" id="property-detail-modal">
+    <div class="modal modal--xl">
+      <div class="modal-header">
+        <h2>Property Details</h2>
+        <button class="modal-close" data-close-modal><i class="fas fa-times"></i></button>
+      </div>
+      <div class="modal-body">
+        <!-- Populated dynamically by JS -->
+      </div>
+    </div>
+  </div>
+
+  <!-- ================================================================
+       SCRIPTS
+       ================================================================ -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/map.js"></script>
+
+</body>
+</html>
