@@ -3248,6 +3248,12 @@ input, select, textarea, button {
     --header-height: 56px;
   }
 
+  /* Fix header overlap by hiding auth buttons on very small screens */
+  .header-actions .auth-login-btn,
+  .header-actions .auth-register-btn {
+    display: none !important;
+  }
+
   .site-header {
     padding: 8px 0;
   }
@@ -3401,6 +3407,38 @@ input, select, textarea, button {
 
   .hero-stat__label {
     font-size: 11px;
+  }
+
+  /* Fix for Sell/Pre-approval tabs stacking on mobile */
+  .hero-pane-content-box {
+    flex-direction: column !important;
+    text-align: center;
+    padding: var(--space-lg) !important;
+    gap: var(--space-md) !important;
+    width: 100%;
+  }
+
+  .hero-pane-action-area {
+    flex-direction: column !important;
+    width: 100% !important;
+    gap: 12px !important;
+  }
+
+  .hero-pane-action-area .btn {
+    width: 100%;
+  }
+
+  .hero-pane-form.inline-flex-form {
+    width: 100% !important;
+  }
+
+  .hero-pane-form.inline-flex-form .hero-pane-input-group {
+    flex-direction: column !important;
+    gap: 12px !important;
+  }
+
+  .hero-pane-form.inline-flex-form .hero-pane-input {
+    width: 100% !important;
   }
 
   /* General Resets */
