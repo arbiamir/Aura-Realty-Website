@@ -20,7 +20,6 @@
   <!-- Stylesheet -->
   <link rel="icon" href="images/favicon.png" type="image/png">
   <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
@@ -29,17 +28,65 @@
        ================================================================ -->
   <header class="site-header" id="site-header">
     <div class="header-inner">
+      <!-- Mobile Toggle (Left) -->
+      <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle menu">
+        <i class="fas fa-bars"></i>
+      </button>
+
+      <!-- Logo (Center on Mobile) -->
       <a href="index.html" class="logo">
         <div class="logo-icon"><i class="fas fa-gem"></i></div>
         <span class="logo-text">Aura<span>Realty</span></span>
       </a>
 
+      <!-- Navigation Drawer (Sidebar) -->
       <nav class="nav-links" id="nav-links">
-        <button class="mobile-menu-close" aria-label="Close menu">
-          <i class="fas fa-times"></i>
-        </button>
+        <div class="nav-sidebar-header">
+          <div class="nav-sidebar-logo">
+            <div class="logo-icon mini"><i class="fas fa-gem"></i></div>
+            <span class="logo-text">Aura<span>Realty</span></span>
+          </div>
+          <button class="sidebar-close" id="sidebar-close" aria-label="Close menu">
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+        
         <a href="index.html" class="nav-link">Home</a>
         <a href="listings.html" class="nav-link">Listings</a>
+        <a href="sold-homes.html" class="nav-link">Sold Homes</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="services.html" class="nav-link">Services</a>
+        <a href="contact.html" class="nav-link active">Contact</a>
+
+        <div class="nav-sidebar-footer">
+          <h4>Find Homes on the go!</h4>
+          <a href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Download_on_the_App_Store_Badge.svg" alt="App Store" class="sidebar-app-badge"></a>
+          <a href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Google Play" class="sidebar-app-badge"></a>
+        </div>
+      </nav>
+
+      <!-- Sidebar Backdrop -->
+      <div class="nav-backdrop" id="nav-backdrop"></div>
+
+      <!-- Auth & Profile Toggle (Right on Mobile) -->
+      <div class="header-actions">
+        <button class="auth-login-btn" data-open-modal="login-modal">Sign In</button>
+        <a href="#" class="btn btn--primary btn--sm auth-register-btn" data-open-modal="register-modal">Join Now</a>
+        <div class="auth-user-menu">
+          <i class="fas fa-user-circle"></i>
+          <span class="auth-user-name"></span>
+          <a href="#" class="auth-logout-btn">Logout</a>
+        </div>
+        <button class="mobile-profile-toggle" data-open-modal="login-modal" aria-label="User Profile">
+          <i class="fas fa-user-circle"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ================================================================
+       PAGE HEADER
+       ================================================================ -->
   <section class="page-header">
     <h1>Contact Us</h1>
     <div class="breadcrumb">

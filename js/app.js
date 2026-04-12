@@ -38,42 +38,49 @@ function initMobileNav() {
   const nav = document.getElementById('nav-links');
   if (!toggle || !nav) return;
 
-  toggle.addEventListener('click', () => {
-    nav.classList.toggle('active');
-    toggle.classList.toggle('active');
-    // Toggle hamburger icon animation
+  const backdrop = document.getElementById('nav-backdrop');
+
+  const closeMenu = () => {
+    nav.classList.remove('active');
+    if(backdrop) backdrop.classList.remove('active');
+    toggle.classList.remove('active');
     const icon = toggle.querySelector('i');
     if (icon) {
-      icon.classList.toggle('fa-bars');
-      icon.classList.toggle('fa-times');
+      icon.classList.remove('fa-times');
+      icon.classList.add('fa-bars');
+    }
+  };
+
+  const openMenu = () => {
+    nav.classList.add('active');
+    if(backdrop) backdrop.classList.add('active');
+    toggle.classList.add('active');
+    // For sidebar, we might want to keep the icon as bars or change to times
+    // Realtor.com keeps bars or just hides them behind drawer, but we have a close button inside.
+  };
+
+  toggle.addEventListener('click', () => {
+    if (nav.classList.contains('active')) {
+      closeMenu();
+    } else {
+      openMenu();
     }
   });
 
-  // Handle the new dedicated Close button
-  const closeBtn = nav.querySelector('.mobile-menu-close');
-  if (closeBtn) {
-    closeBtn.addEventListener('click', () => {
-      nav.classList.remove('active');
-      toggle.classList.remove('active');
-      const icon = toggle.querySelector('i');
-      if (icon) {
-        icon.classList.remove('fa-times');
-        icon.classList.add('fa-bars');
-      }
-    });
+  // Handle Sidebar close button (X inside drawer)
+  const sidebarClose = document.getElementById('sidebar-close');
+  if (sidebarClose) {
+    sidebarClose.addEventListener('click', closeMenu);
+  }
+
+  // Handle Backdrop click
+  if (backdrop) {
+    backdrop.addEventListener('click', closeMenu);
   }
 
   // Close mobile nav on link click
   nav.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', () => {
-      nav.classList.remove('active');
-      toggle.classList.remove('active');
-      const icon = toggle.querySelector('i');
-      if (icon) {
-        icon.classList.remove('fa-times');
-        icon.classList.add('fa-bars');
-      }
-    });
+    link.addEventListener('click', closeMenu);
   });
 }
 
