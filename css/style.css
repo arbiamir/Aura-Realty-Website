@@ -1172,6 +1172,7 @@ input, select, textarea, button {
   text-align: center;
   position: relative;
   overflow: hidden;
+  margin-top: var(--space-lg); /* Small margin as requested */
 }
 
 .cta-section::before {
@@ -3088,13 +3089,15 @@ input, select, textarea, button {
 .app-download-banner {
   width: 100%;
   display: flex;
-  justify-content: center; /* Center horizontally */
-  align-items: center;     /* Center vertically */
+  justify-content: center;
+  align-items: center;
   overflow: hidden;
   border-top: 1px solid var(--color-gray-200);
-  background-color: #f8f9fa; /* Matches the banner background exactly */
-  min-height: 120px;         /* Ensures a consistent horizontal strip height */
-  margin-bottom: var(--space-4xl);
+  border-bottom: 1px solid var(--color-gray-200);
+  background-color: #f8f9fa;
+  min-height: 120px;
+  /* Adjusted for a smaller, symmetrical gap */
+  margin: var(--space-lg) 0;
 }
 
 .app-download-banner img {

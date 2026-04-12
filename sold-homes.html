@@ -17,6 +17,17 @@
   <!-- Stylesheet -->
   <link rel="icon" href="images/favicon.png" type="image/png">
   <link rel="stylesheet" href="css/style.css?v=6">
+  <style>
+    /* Localized override for the hero background requested by user */
+    .hero--sold::before {
+      background: url('images/sold-hero-v2.jpg') center/cover no-repeat !important;
+      animation: none !important; /* Stop the default zoom to maintain focus on the provided house */
+    }
+    /* Ensure the overlay is balanced for the new lighter image */
+    .hero--sold::after {
+      background: rgba(15, 23, 42, 0.4) !important;
+    }
+  </style>
 </head>
 <body>
 
@@ -32,7 +43,7 @@
       <nav class="nav-links" id="nav-links">
         <a href="index.html" class="nav-link">Home</a>
         <a href="listings.html" class="nav-link">Listings</a>
-        <a href="sold-homes.html" class="nav-link">Sold Homes</a>
+        <a href="sold-homes.html" class="nav-link active">Sold Homes</a>
         <a href="about.html" class="nav-link">About</a>
         <a href="services.html" class="nav-link">Services</a>
         <a href="contact.html" class="nav-link">Contact</a>
@@ -195,7 +206,7 @@
           <h4>Quick Links</h4>
           <a href="index.html">Home</a>
           <a href="listings.html">Listings</a>
-        <a href="sold-homes.html" class="nav-link">Sold Homes</a>
+          <a href="sold-homes.html">Sold Homes</a>
           <a href="about.html">About Us</a>
           <a href="services.html">Services</a>
           <a href="contact.html">Contact</a>
@@ -232,12 +243,20 @@
   <script src="js/data.js"></script>
   <script src="js/app.js?v=3"></script>
   <script>
-    // Render sold properties on this page
+    // Render sold properties with unique images
     document.addEventListener('DOMContentLoaded', () => {
       const grid = document.getElementById('sold-grid');
       if (!grid || typeof PROPERTIES === 'undefined') return;
 
       const soldProperties = PROPERTIES.filter(p => p.category === 'sold');
+
+      // Unique images for sold properties to avoid repetition
+      const uniqueSoldImages = [
+        "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&h=600&fit=crop",
+        "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=800&h=600&fit=crop",
+        "https://images.unsplash.com/photo-1628592102751-ba83b0314276?w=800&h=600&fit=crop",
+        "https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=800&h=600&fit=crop"
+      ];
 
       function renderSoldGrid(properties) {
         grid.innerHTML = '';
@@ -245,8 +264,14 @@
           grid.innerHTML = '<div class="no-results"><i class="fas fa-home"></i><h3>No recently sold homes found</h3><p>Try a different search or check back soon.</p></div>';
           return;
         }
-        properties.forEach(p => {
-          const card = createPropertyCard(p);
+        properties.forEach((p, index) => {
+          // Temporarily patch the image for this listing
+          const displayProperty = {
+            ...p,
+            images: [uniqueSoldImages[index % uniqueSoldImages.length], ...p.images.slice(1)]
+          };
+
+          const card = createPropertyCard(displayProperty);
           const badge = card.querySelector('.property-card__badge');
           if (badge) {
             badge.textContent = 'Sold';
@@ -260,7 +285,7 @@
         });
       }
 
-      // Initial render
+      // Initial render with unique images
       renderSoldGrid(soldProperties);
 
       // Search bar filtering
