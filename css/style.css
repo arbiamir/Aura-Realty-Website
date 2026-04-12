@@ -3255,6 +3255,13 @@ input, select, textarea, button {
     position: relative;
   }
 
+  /* Hide desktop auth buttons on mobile */
+  .auth-login-btn,
+  .auth-register-btn,
+  .auth-user-menu {
+    display: none !important;
+  }
+
   .logo {
     position: absolute;
     left: 50%;
