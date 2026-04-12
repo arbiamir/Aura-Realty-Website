@@ -3273,29 +3273,58 @@ input, select, textarea, button {
     font-size: 20px;
   }
 
-  .nav-links {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
     background: var(--color-white);
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: var(--space-md);
-    z-index: 2000;
+    gap: var(--space-xl);
+    z-index: 5000;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transform: translateY(-20px);
   }
 
   .nav-links.active {
     display: flex;
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
   }
 
   .nav-link {
-    font-size: 20px;
-    padding: 12px 24px;
+    font-size: 24px;
+    font-weight: 700;
+    padding: var(--space-md) var(--space-xl);
+    color: var(--color-navy) !important;
+    opacity: 1 !important;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-radius: var(--radius-lg);
+    transition: all 0.2s ease;
+    background: transparent !important;
+  }
+
+  .nav-link:active {
+    background: rgba(0,0,0,0.05) !important;
+  }
+
+  .nav-link.active {
+    color: var(--color-primary) !important;
+  }
+
+  .mobile-menu-close {
+    display: block !important;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: none;
+    border: none;
+    font-size: 32px;
     color: var(--color-gray-900);
+    padding: 10px;
+    cursor: pointer;
+    z-index: 5001;
   }
 
   /* ─── Mobile Hero Overhaul ─── */

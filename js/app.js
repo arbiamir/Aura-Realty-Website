@@ -49,6 +49,20 @@ function initMobileNav() {
     }
   });
 
+  // Handle the new dedicated Close button
+  const closeBtn = nav.querySelector('.mobile-menu-close');
+  if (closeBtn) {
+    closeBtn.addEventListener('click', () => {
+      nav.classList.remove('active');
+      toggle.classList.remove('active');
+      const icon = toggle.querySelector('i');
+      if (icon) {
+        icon.classList.remove('fa-times');
+        icon.classList.add('fa-bars');
+      }
+    });
+  }
+
   // Close mobile nav on link click
   nav.querySelectorAll('a').forEach(link => {
     link.addEventListener('click', () => {
