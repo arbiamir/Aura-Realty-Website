@@ -28,10 +28,11 @@ const PROPERTIES = [
     type: "House",
     yearBuilt: 2021,
     status: "For Sale",
+    category: "buy",
     featured: true,
     description: "Stunning modern villa with panoramic ocean views, infinity pool, gourmet kitchen with top-of-the-line appliances, and a spacious open floor plan. Smart home technology throughout. Located in the prestigious Miami Beach neighborhood.",
     images: ["https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=800&h=600&fit=crop", "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&h=600&fit=crop"],
-    agent: { name: "Sarah Mitchell", phone: "(305) 555-0101", email: "sarah@aurarealty.com", photo: "" }
+    agent: { name: "Sarah Mitchell", phone: "(305) 555-0101", email: "sarah@aurarealty.com", photo: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&h=400&fit=crop" }
   },
   {
     id: 2,
@@ -49,10 +50,11 @@ const PROPERTIES = [
     type: "Condo",
     yearBuilt: 2023,
     status: "For Sale",
+    category: "buy",
     featured: true,
     description: "Exclusive penthouse suite in the heart of Brickell. Floor-to-ceiling windows offer breathtaking city and bay views. Features include a private elevator, chef's kitchen, marble finishes, and resort-style amenities.",
     images: ["https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=800&h=600&fit=crop", "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=800&h=600&fit=crop"],
-    agent: { name: "Michael Chen", phone: "(305) 555-0102", email: "michael@aurarealty.com", photo: "" }
+    agent: { name: "Michael Chen", phone: "(305) 555-0102", email: "michael@aurarealty.com", photo: "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&h=400&fit=crop" }
   },
   {
     id: 3,
@@ -70,10 +72,11 @@ const PROPERTIES = [
     type: "House",
     yearBuilt: 1998,
     status: "For Sale",
+    category: "buy",
     featured: true,
     description: "Beautiful colonial home on a quiet tree-lined street. Features hardwood floors, a fireplace, updated kitchen and bathrooms, and a large backyard perfect for entertaining. Close to top-rated schools and downtown shopping.",
     images: ["https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&h=600&fit=crop", "https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?w=800&h=600&fit=crop"],
-    agent: { name: "Emily Rodriguez", phone: "(203) 555-0103", email: "emily@aurarealty.com", photo: "" }
+    agent: { name: "Emily Rodriguez", phone: "(203) 555-0103", email: "emily@aurarealty.com", photo: "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&h=400&fit=crop" }
   },
   {
     id: 4,
@@ -91,10 +94,11 @@ const PROPERTIES = [
     type: "Apartment",
     yearBuilt: 2019,
     status: "For Sale",
+    category: "buy",
     featured: false,
     description: "Contemporary apartment in the Upper West Side with an open layout, modern finishes, in-unit laundry, and building amenities including a fitness center, rooftop lounge, and doorman service.",
     images: ["https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=800&h=600&fit=crop", "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=800&h=600&fit=crop"],
-    agent: { name: "David Park", phone: "(212) 555-0104", email: "david@aurarealty.com", photo: "" }
+    agent: { name: "David Park", phone: "(212) 555-0104", email: "david@aurarealty.com", photo: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=400&h=400&fit=crop" }
   },
   {
     id: 5,
@@ -112,10 +116,11 @@ const PROPERTIES = [
     type: "House",
     yearBuilt: 2020,
     status: "For Sale",
+    category: "buy",
     featured: true,
     description: "Magnificent lakefront estate with private dock and stunning mountain views. Features include a gourmet kitchen, home theater, wine cellar, heated floors, and expansive deck overlooking Lake Tahoe.",
     images: ["https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&h=600&fit=crop", "https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=800&h=600&fit=crop"],
-    agent: { name: "Sarah Mitchell", phone: "(305) 555-0101", email: "sarah@aurarealty.com", photo: "" }
+    agent: { name: "Sarah Mitchell", phone: "(305) 555-0101", email: "sarah@aurarealty.com", photo: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&h=400&fit=crop" }
   },
   {
     id: 6,
@@ -133,10 +138,11 @@ const PROPERTIES = [
     type: "Condo",
     yearBuilt: 2022,
     status: "For Sale",
+    category: "buy",
     featured: false,
     description: "Industrial-chic loft in the vibrant Arts District. Soaring 16-foot ceilings, exposed brick, polished concrete floors, and an open floor plan. Walking distance to galleries, restaurants, and nightlife.",
     images: ["https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=800&h=600&fit=crop", "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=800&h=600&fit=crop"],
-    agent: { name: "Jessica Taylor", phone: "(213) 555-0106", email: "jessica@aurarealty.com", photo: "" }
+    agent: { name: "Jessica Taylor", phone: "(213) 555-0106", email: "jessica@aurarealty.com", photo: "https://images.unsplash.com/photo-1598550874175-4d0ef43ee90d?w=400&h=400&fit=crop" }
   },
   {
     id: 7,
@@ -154,10 +160,11 @@ const PROPERTIES = [
     type: "House",
     yearBuilt: 2018,
     status: "For Sale",
+    category: "buy",
     featured: false,
     description: "Spacious family home in a sought-after Austin neighborhood. Open concept living, granite countertops, stainless steel appliances, covered patio, and a two-car garage. Community pool and playground nearby.",
     images: ["https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&h=600&fit=crop", "https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?w=800&h=600&fit=crop"],
-    agent: { name: "Michael Chen", phone: "(305) 555-0102", email: "michael@aurarealty.com", photo: "" }
+    agent: { name: "Michael Chen", phone: "(305) 555-0102", email: "michael@aurarealty.com", photo: "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&h=400&fit=crop" }
   },
   {
     id: 8,
@@ -175,10 +182,11 @@ const PROPERTIES = [
     type: "House",
     yearBuilt: 2022,
     status: "For Sale",
+    category: "buy",
     featured: true,
     description: "Exquisite beachfront property with direct sand access. Floor-to-ceiling glass walls, outdoor living areas, infinity edge pool, and a private path to the beach. Every room designed to capture stunning Pacific Ocean views.",
     images: ["https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=800&h=600&fit=crop", "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&h=600&fit=crop"],
-    agent: { name: "Emily Rodriguez", phone: "(203) 555-0103", email: "emily@aurarealty.com", photo: "" }
+    agent: { name: "Emily Rodriguez", phone: "(203) 555-0103", email: "emily@aurarealty.com", photo: "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&h=400&fit=crop" }
   },
   {
     id: 9,
@@ -196,10 +204,11 @@ const PROPERTIES = [
     type: "Townhouse",
     yearBuilt: 1895,
     status: "For Sale",
+    category: "buy",
     featured: false,
     description: "Meticulously restored Back Bay brownstone combining period details with modern upgrades. Original moldings, fireplaces, and hardwood floors complemented by a chef's kitchen, central air, and a private roof deck.",
     images: ["https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&h=600&fit=crop", "https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?w=800&h=600&fit=crop"],
-    agent: { name: "David Park", phone: "(212) 555-0104", email: "david@aurarealty.com", photo: "" }
+    agent: { name: "David Park", phone: "(212) 555-0104", email: "david@aurarealty.com", photo: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=400&h=400&fit=crop" }
   },
   {
     id: 10,
@@ -217,10 +226,11 @@ const PROPERTIES = [
     type: "House",
     yearBuilt: 2017,
     status: "For Sale",
+    category: "buy",
     featured: false,
     description: "Cozy mountain cabin with stunning views. Vaulted ceilings with exposed beams, stone fireplace, wraparound deck, and a hot tub. Perfect year-round retreat for skiing, hiking, and mountain living.",
     images: ["https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&h=600&fit=crop", "https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=800&h=600&fit=crop"],
-    agent: { name: "Jessica Taylor", phone: "(213) 555-0106", email: "jessica@aurarealty.com", photo: "" }
+    agent: { name: "Jessica Taylor", phone: "(213) 555-0106", email: "jessica@aurarealty.com", photo: "https://images.unsplash.com/photo-1598550874175-4d0ef43ee90d?w=400&h=400&fit=crop" }
   },
   {
     id: 11,
@@ -238,10 +248,11 @@ const PROPERTIES = [
     type: "Condo",
     yearBuilt: 2021,
     status: "For Sale",
+    category: "buy",
     featured: true,
     description: "Stunning high-rise condo with panoramic views of Lake Michigan and the Chicago skyline. Premium finishes include custom cabinetry, quartz counters, and hardwood floors. Full-service building with pool, spa, and concierge.",
     images: ["https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=800&h=600&fit=crop", "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=800&h=600&fit=crop"],
-    agent: { name: "Sarah Mitchell", phone: "(305) 555-0101", email: "sarah@aurarealty.com", photo: "" }
+    agent: { name: "Sarah Mitchell", phone: "(305) 555-0101", email: "sarah@aurarealty.com", photo: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&h=400&fit=crop" }
   },
   {
     id: 12,
@@ -259,10 +270,11 @@ const PROPERTIES = [
     type: "Apartment",
     yearBuilt: 2020,
     status: "For Sale",
+    category: "buy",
     featured: false,
     description: "Efficient and stylish studio in downtown Seattle. Features include a Murphy bed, built-in storage, modern kitchen, and in-unit washer/dryer. Steps from Pike Place Market and the waterfront.",
     images: ["https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=800&h=600&fit=crop", "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=800&h=600&fit=crop"],
-    agent: { name: "Michael Chen", phone: "(305) 555-0102", email: "michael@aurarealty.com", photo: "" }
+    agent: { name: "Michael Chen", phone: "(305) 555-0102", email: "michael@aurarealty.com", photo: "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&h=400&fit=crop" }
   },
   {
     id: 13,
@@ -280,10 +292,11 @@ const PROPERTIES = [
     type: "House",
     yearBuilt: 1935,
     status: "For Sale",
+    category: "buy",
     featured: false,
     description: "Iconic Spanish Revival estate in Beverly Hills. Arched doorways, terracotta tile, lush courtyard gardens, and a sparkling pool. Thoughtfully renovated to preserve original character while adding modern luxury.",
     images: ["https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&h=600&fit=crop", "https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?w=800&h=600&fit=crop"],
-    agent: { name: "Jessica Taylor", phone: "(213) 555-0106", email: "jessica@aurarealty.com", photo: "" }
+    agent: { name: "Jessica Taylor", phone: "(213) 555-0106", email: "jessica@aurarealty.com", photo: "https://images.unsplash.com/photo-1598550874175-4d0ef43ee90d?w=400&h=400&fit=crop" }
   },
   {
     id: 14,
@@ -301,10 +314,11 @@ const PROPERTIES = [
     type: "Townhouse",
     yearBuilt: 2019,
     status: "For Sale",
+    category: "buy",
     featured: false,
     description: "Contemporary waterfront townhouse with rooftop terrace and harbor views. Open living areas, gourmet kitchen, attached two-car garage, and private patio. Walk to restaurants, shops, and the Gaslamp Quarter.",
     images: ["https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=800&h=600&fit=crop", "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&h=600&fit=crop"],
-    agent: { name: "Emily Rodriguez", phone: "(203) 555-0103", email: "emily@aurarealty.com", photo: "" }
+    agent: { name: "Emily Rodriguez", phone: "(203) 555-0103", email: "emily@aurarealty.com", photo: "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&h=400&fit=crop" }
   },
   {
     id: 15,
@@ -322,10 +336,11 @@ const PROPERTIES = [
     type: "House",
     yearBuilt: 2023,
     status: "For Sale",
+    category: "buy",
     featured: false,
     description: "New construction modern farmhouse with shiplap accents, barn doors, and a wraparound porch. Chef's kitchen with farmhouse sink, mudroom, and a finished bonus room. Located in a charming Nashville neighborhood.",
     images: ["https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&h=600&fit=crop", "https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?w=800&h=600&fit=crop"],
-    agent: { name: "David Park", phone: "(212) 555-0104", email: "david@aurarealty.com", photo: "" }
+    agent: { name: "David Park", phone: "(212) 555-0104", email: "david@aurarealty.com", photo: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=400&h=400&fit=crop" }
   },
   {
     id: 16,
@@ -343,10 +358,11 @@ const PROPERTIES = [
     type: "Condo",
     yearBuilt: 2024,
     status: "For Sale",
+    category: "buy",
     featured: true,
     description: "Ultra-luxury penthouse loft in the Financial District. Double-height ceilings, private terrace with city views, spa-like bathrooms, and Boffi kitchen. Full-service building with pool, gym, and 24-hour concierge.",
     images: ["https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=800&h=600&fit=crop", "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=800&h=600&fit=crop"],
-    agent: { name: "Sarah Mitchell", phone: "(305) 555-0101", email: "sarah@aurarealty.com", photo: "" }
+    agent: { name: "Sarah Mitchell", phone: "(305) 555-0101", email: "sarah@aurarealty.com", photo: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&h=400&fit=crop" }
   },
   {
     id: 17,
@@ -364,10 +380,11 @@ const PROPERTIES = [
     type: "House",
     yearBuilt: 2020,
     status: "For Sale",
+    category: "buy",
     featured: false,
     description: "Beautiful desert-modern home with mountain views. Features include a resort-style pool, outdoor kitchen, natural stone accents, and energy-efficient design. Enjoy year-round sunshine in Scottsdale's premier community.",
     images: ["https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&h=600&fit=crop", "https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=800&h=600&fit=crop"],
-    agent: { name: "Emily Rodriguez", phone: "(203) 555-0103", email: "emily@aurarealty.com", photo: "" }
+    agent: { name: "Emily Rodriguez", phone: "(203) 555-0103", email: "emily@aurarealty.com", photo: "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&h=400&fit=crop" }
   },
   {
     id: 18,
@@ -385,10 +402,11 @@ const PROPERTIES = [
     type: "Apartment",
     yearBuilt: 2021,
     status: "For Sale",
+    category: "buy",
     featured: false,
     description: "Trendy Pearl District loft with exposed brick, oversized windows, and bamboo flooring. Building features include a courtyard, bike storage, and EV charging. Walk score of 98 — everything you need is at your doorstep.",
     images: ["https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=800&h=600&fit=crop", "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=800&h=600&fit=crop"],
-    agent: { name: "Jessica Taylor", phone: "(213) 555-0106", email: "jessica@aurarealty.com", photo: "" }
+    agent: { name: "Jessica Taylor", phone: "(213) 555-0106", email: "jessica@aurarealty.com", photo: "https://images.unsplash.com/photo-1598550874175-4d0ef43ee90d?w=400&h=400&fit=crop" }
   },
   {
     id: 19,
@@ -406,10 +424,11 @@ const PROPERTIES = [
     type: "House",
     yearBuilt: 1920,
     status: "For Sale",
+    category: "buy",
     featured: true,
     description: "Magnificent Georgian mansion on Embassy Row. Grand foyer, ballroom, library, wine cellar, staff quarters, and manicured gardens. A once-in-a-generation opportunity to own a piece of Washington's architectural history.",
     images: ["https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&h=600&fit=crop", "https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?w=800&h=600&fit=crop"],
-    agent: { name: "Michael Chen", phone: "(305) 555-0102", email: "michael@aurarealty.com", photo: "" }
+    agent: { name: "Michael Chen", phone: "(305) 555-0102", email: "michael@aurarealty.com", photo: "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&h=400&fit=crop" }
   },
   {
     id: 20,
@@ -427,10 +446,11 @@ const PROPERTIES = [
     type: "House",
     yearBuilt: 2022,
     status: "For Sale",
+    category: "buy",
     featured: false,
     description: "Tropical paradise with lush garden surroundings and ocean breezes. Indoor-outdoor living with lanai, plunge pool, and outdoor shower. Modern Hawaiian style with natural materials and island-inspired design.",
     images: ["https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=800&h=600&fit=crop", "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&h=600&fit=crop"],
-    agent: { name: "David Park", phone: "(212) 555-0104", email: "david@aurarealty.com", photo: "" }
+    agent: { name: "David Park", phone: "(212) 555-0104", email: "david@aurarealty.com", photo: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=400&h=400&fit=crop" }
   },
   {
     id: 21,
@@ -448,10 +468,11 @@ const PROPERTIES = [
     type: "House",
     yearBuilt: 2024,
     status: "For Sale",
+    category: "buy",
     featured: false,
     description: "Architectural masterpiece featuring walls of glass and panoramic city views. Cantilevered design, smart home automation, geothermal heating, and a green roof. A true statement home for the most discerning buyer.",
     images: ["https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&h=600&fit=crop", "https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=800&h=600&fit=crop"],
-    agent: { name: "Sarah Mitchell", phone: "(305) 555-0101", email: "sarah@aurarealty.com", photo: "" }
+    agent: { name: "Sarah Mitchell", phone: "(305) 555-0101", email: "sarah@aurarealty.com", photo: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&h=400&fit=crop" }
   },
   {
     id: 22,
@@ -469,10 +490,11 @@ const PROPERTIES = [
     type: "House",
     yearBuilt: 1940,
     status: "For Sale",
+    category: "buy",
     featured: false,
     description: "Beautifully renovated craftsman bungalow in East Atlanta Village. Original character with modern upgrades including a new kitchen, updated electrical and plumbing, and a landscaped backyard with fire pit.",
     images: ["https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&h=600&fit=crop", "https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?w=800&h=600&fit=crop"],
-    agent: { name: "Jessica Taylor", phone: "(213) 555-0106", email: "jessica@aurarealty.com", photo: "" }
+    agent: { name: "Jessica Taylor", phone: "(213) 555-0106", email: "jessica@aurarealty.com", photo: "https://images.unsplash.com/photo-1598550874175-4d0ef43ee90d?w=400&h=400&fit=crop" }
   },
   {
     id: 23,
@@ -490,10 +512,11 @@ const PROPERTIES = [
     type: "Condo",
     yearBuilt: 2021,
     status: "For Sale",
+    category: "buy",
     featured: false,
     description: "Resort-style living at South Pointe. Ocean-view unit with balcony, impact windows, and designer finishes. Building amenities include beach service, two pools, fitness center, spa, and valet parking.",
     images: ["https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=800&h=600&fit=crop", "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=800&h=600&fit=crop"],
-    agent: { name: "Emily Rodriguez", phone: "(203) 555-0103", email: "emily@aurarealty.com", photo: "" }
+    agent: { name: "Emily Rodriguez", phone: "(203) 555-0103", email: "emily@aurarealty.com", photo: "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&h=400&fit=crop" }
   },
   {
     id: 24,
@@ -511,10 +534,109 @@ const PROPERTIES = [
     type: "House",
     yearBuilt: 2019,
     status: "For Sale",
+    category: "buy",
     featured: true,
     description: "Breathtaking estate surrounded by 10 acres of working vineyard. Stone and timber construction, wine cave, tasting room, infinity pool, and guest cottage. The ultimate Napa Valley lifestyle property.",
     images: ["https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&h=600&fit=crop", "https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?w=800&h=600&fit=crop"],
-    agent: { name: "Michael Chen", phone: "(305) 555-0102", email: "michael@aurarealty.com", photo: "" }
+    agent: { name: "Michael Chen", phone: "(305) 555-0102", email: "michael@aurarealty.com", photo: "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&h=400&fit=crop" }
+  },
+
+  /* ─── Rental Properties ─── */
+  {
+    id: 25, title: "Luxury Downtown Apartment", price: 3500,
+    address: "900 S Figueroa St #2201", city: "Los Angeles", state: "CA", zip: "90015",
+    lat: 34.0460, lng: -118.2605, beds: 2, baths: 2, sqft: 1200,
+    type: "Apartment", yearBuilt: 2023, status: "For Rent", category: "rent", featured: false,
+    description: "Premium high-rise apartment in DTLA with skyline views, in-unit laundry, quartz counters, and access to rooftop pool, gym, and co-working lounge.",
+    images: ["https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=800&h=600&fit=crop", "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=800&h=600&fit=crop"],
+    agent: { name: "Jessica Taylor", phone: "(213) 555-0106", email: "jessica@aurarealty.com", photo: "https://images.unsplash.com/photo-1598550874175-4d0ef43ee90d?w=400&h=400&fit=crop" }
+  },
+  {
+    id: 26, title: "Furnished Midtown Studio", price: 2800,
+    address: "350 W 42nd St #18F", city: "New York", state: "NY", zip: "10036",
+    lat: 40.7580, lng: -73.9930, beds: 1, baths: 1, sqft: 550,
+    type: "Apartment", yearBuilt: 2021, status: "For Rent", category: "rent", featured: false,
+    description: "Fully furnished studio in the heart of Midtown Manhattan. Floor-to-ceiling windows, modern kitchen, doorman building with gym and rooftop terrace.",
+    images: ["https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=800&h=600&fit=crop", "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=800&h=600&fit=crop"],
+    agent: { name: "David Park", phone: "(212) 555-0104", email: "david@aurarealty.com", photo: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=400&h=400&fit=crop" }
+  },
+  {
+    id: 27, title: "Beachside Condo Rental", price: 4200,
+    address: "1500 Ocean Dr #803", city: "Miami Beach", state: "FL", zip: "33139",
+    lat: 25.7814, lng: -80.1305, beds: 2, baths: 2, sqft: 1350,
+    type: "Condo", yearBuilt: 2022, status: "For Rent", category: "rent", featured: false,
+    description: "Stunning ocean-view condo available for rent on iconic Ocean Drive. Resort-style amenities including pool, spa, and beach service.",
+    images: ["https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=800&h=600&fit=crop", "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&h=600&fit=crop"],
+    agent: { name: "Sarah Mitchell", phone: "(305) 555-0101", email: "sarah@aurarealty.com", photo: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&h=400&fit=crop" }
+  },
+  {
+    id: 28, title: "Family Home for Lease", price: 2900,
+    address: "145 Willow Creek Dr", city: "Austin", state: "TX", zip: "78745",
+    lat: 30.2100, lng: -97.7650, beds: 3, baths: 2, sqft: 1800,
+    type: "House", yearBuilt: 2020, status: "For Rent", category: "rent", featured: false,
+    description: "Charming single-family home available for lease in South Austin. Open floor plan, fenced backyard, two-car garage, and updated appliances.",
+    images: ["https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&h=600&fit=crop", "https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?w=800&h=600&fit=crop"],
+    agent: { name: "Michael Chen", phone: "(305) 555-0102", email: "michael@aurarealty.com", photo: "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&h=400&fit=crop" }
+  },
+  {
+    id: 29, title: "Lakeview Penthouse Rental", price: 5500,
+    address: "680 N Lake Shore Dr #PH3", city: "Chicago", state: "IL", zip: "60611",
+    lat: 41.8940, lng: -87.6170, beds: 3, baths: 2, sqft: 2400,
+    type: "Condo", yearBuilt: 2022, status: "For Rent", category: "rent", featured: false,
+    description: "Stunning penthouse rental with sweeping views of Lake Michigan. Premium finishes, private rooftop terrace, chef's kitchen, and full-service building.",
+    images: ["https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=800&h=600&fit=crop", "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=800&h=600&fit=crop"],
+    agent: { name: "Emily Rodriguez", phone: "(203) 555-0103", email: "emily@aurarealty.com", photo: "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&h=400&fit=crop" }
+  },
+  {
+    id: 30, title: "Tech Hub Studio", price: 2200,
+    address: "200 2nd Ave S #4B", city: "Seattle", state: "WA", zip: "98104",
+    lat: 47.6000, lng: -122.3340, beds: 1, baths: 1, sqft: 600,
+    type: "Apartment", yearBuilt: 2023, status: "For Rent", category: "rent", featured: false,
+    description: "Modern studio in Pioneer Square, perfect for tech professionals. High-speed internet included, bike storage, EV charging, and pet-friendly.",
+    images: ["https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=800&h=600&fit=crop", "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=800&h=600&fit=crop"],
+    agent: { name: "Jessica Taylor", phone: "(213) 555-0106", email: "jessica@aurarealty.com", photo: "https://images.unsplash.com/photo-1598550874175-4d0ef43ee90d?w=400&h=400&fit=crop" }
+  },
+
+  /* ─── Recently Sold Properties ─── */
+  {
+    id: 31, title: "Midcentury Modern Gem", price: 920000,
+    address: "2500 Laurel Canyon Blvd", city: "Los Angeles", state: "CA", zip: "90046",
+    lat: 34.1100, lng: -118.3700, beds: 3, baths: 2, sqft: 2100,
+    type: "House", yearBuilt: 1962, status: "Sold", category: "sold", featured: false,
+    soldDate: "2026-03-15", soldPrice: 920000,
+    description: "Iconic midcentury modern home sold above asking price. Original post-and-beam construction, walls of glass, and stunning canyon views.",
+    images: ["https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&h=600&fit=crop", "https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=800&h=600&fit=crop"],
+    agent: { name: "Jessica Taylor", phone: "(213) 555-0106", email: "jessica@aurarealty.com", photo: "https://images.unsplash.com/photo-1598550874175-4d0ef43ee90d?w=400&h=400&fit=crop" }
+  },
+  {
+    id: 32, title: "Coral Gables Bungalow", price: 685000,
+    address: "430 Alhambra Cir", city: "Coral Gables", state: "FL", zip: "33134",
+    lat: 25.7500, lng: -80.2600, beds: 3, baths: 2, sqft: 1700,
+    type: "House", yearBuilt: 2005, status: "Sold", category: "sold", featured: false,
+    soldDate: "2026-02-28", soldPrice: 685000,
+    description: "Charming Coral Gables bungalow with Mediterranean details. Updated kitchen, impact windows, and a lush tropical backyard with pool. Sold in 12 days.",
+    images: ["https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&h=600&fit=crop", "https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?w=800&h=600&fit=crop"],
+    agent: { name: "Sarah Mitchell", phone: "(305) 555-0101", email: "sarah@aurarealty.com", photo: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&h=400&fit=crop" }
+  },
+  {
+    id: 33, title: "Brooklyn Heights Townhouse", price: 2150000,
+    address: "88 Pierrepont St", city: "Brooklyn", state: "NY", zip: "11201",
+    lat: 40.6960, lng: -73.9936, beds: 4, baths: 3, sqft: 3000,
+    type: "Townhouse", yearBuilt: 1910, status: "Sold", category: "sold", featured: false,
+    soldDate: "2026-03-05", soldPrice: 2150000,
+    description: "Gorgeous Brooklyn Heights townhouse with original details and modern upgrades. Parlor floor with 12-foot ceilings, chef's kitchen, and private garden.",
+    images: ["https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&h=600&fit=crop", "https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?w=800&h=600&fit=crop"],
+    agent: { name: "David Park", phone: "(212) 555-0104", email: "david@aurarealty.com", photo: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=400&h=400&fit=crop" }
+  },
+  {
+    id: 34, title: "Pacific Heights Victorian", price: 3400000,
+    address: "2100 Broadway St", city: "San Francisco", state: "CA", zip: "94115",
+    lat: 37.7950, lng: -122.4330, beds: 5, baths: 4, sqft: 4200,
+    type: "House", yearBuilt: 1892, status: "Sold", category: "sold", featured: false,
+    soldDate: "2026-01-20", soldPrice: 3400000,
+    description: "Stunning Pacific Heights Victorian with bay views. Grand staircase, period mantels, and a gourmet kitchen. Sold with multiple offers above asking.",
+    images: ["https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=800&h=600&fit=crop", "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&h=600&fit=crop"],
+    agent: { name: "Emily Rodriguez", phone: "(203) 555-0103", email: "emily@aurarealty.com", photo: "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&h=400&fit=crop" }
   }
 ];
 
@@ -525,7 +647,7 @@ const NEIGHBORHOODS = [
   { name: "Miami Beach", city: "Miami", state: "FL", properties: 156, image: "https://images.unsplash.com/photo-1533106497176-45ae19e68ba2?w=600&h=400&fit=crop" },
   { name: "Beverly Hills", city: "Los Angeles", state: "CA", properties: 89, image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&h=400&fit=crop" },
   { name: "Upper West Side", city: "New York", state: "NY", properties: 234, image: "https://images.unsplash.com/photo-1496442226666-8d4d0e62e6e9?w=600&h=400&fit=crop" },
-  { name: "Back Bay", city: "Boston", state: "MA", properties: 67, image: "https://images.unsplash.com/photo-1501979376754-1d81b6aa8a97?w=600&h=400&fit=crop" },
+  { name: "Back Bay", city: "Boston", state: "MA", properties: 67, image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&h=400&fit=crop" },
   { name: "Napa Valley", city: "Napa", state: "CA", properties: 42, image: "https://images.unsplash.com/photo-1506377247377-2a5b3b417ebb?w=600&h=400&fit=crop" },
   { name: "Capitol Hill", city: "Washington", state: "DC", properties: 113, image: "https://images.unsplash.com/photo-1501466044931-62695aada8e9?w=600&h=400&fit=crop" }
 ];
@@ -539,21 +661,21 @@ const TESTIMONIALS = [
     location: "Miami, FL",
     rating: 5,
     text: "Aura Realty made our dream of owning a waterfront home a reality. Sarah was incredibly knowledgeable about the market and guided us through every step. We couldn't be happier with our new home!",
-    photo: ""
+    photo: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=400&fit=crop"
   },
   {
     name: "Robert Kim",
     location: "New York, NY",
     rating: 5,
     text: "As a first-time buyer in NYC, the process seemed overwhelming. David at Aura Realty was patient, professional, and found me the perfect apartment within my budget. Highly recommend!",
-    photo: ""
+    photo: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=400&fit=crop"
   },
   {
     name: "Amanda & Carlos Rivera",
     location: "Austin, TX",
     rating: 5,
     text: "We relocated from California and needed to find a home quickly. The Aura Realty team went above and beyond, showing us dozens of homes and negotiating an amazing deal. Five stars!",
-    photo: ""
+    photo: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=400&h=400&fit=crop"
   }
 ];
 
@@ -564,50 +686,62 @@ const TEAM_MEMBERS = [
   {
     name: "Sarah Mitchell",
     role: "Founder & CEO",
+    experience: "25 years",
+    sales: "120 sales",
     bio: "With over 20 years of experience in luxury real estate, Sarah founded Aura Realty to redefine the home buying experience. Her vision combines cutting-edge technology with personalized white-glove service.",
     phone: "(305) 555-0101",
     email: "sarah@aurarealty.com",
-    photo: ""
+    photo: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&h=400&fit=crop"
   },
   {
     name: "Michael Chen",
     role: "Senior Agent",
+    experience: "15 years",
+    sales: "85 sales",
     bio: "Michael specializes in investment properties and has helped clients build portfolios worth over $50M. His analytical approach and market expertise make him a trusted advisor for savvy investors.",
     phone: "(305) 555-0102",
     email: "michael@aurarealty.com",
-    photo: ""
+    photo: "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&h=400&fit=crop"
   },
   {
     name: "Emily Rodriguez",
     role: "Luxury Specialist",
+    experience: "12 years",
+    sales: "64 sales",
     bio: "Emily brings a refined eye for design and an extensive network to every transaction. She specializes in high-end residential properties and has a track record of record-breaking sales.",
     phone: "(203) 555-0103",
     email: "emily@aurarealty.com",
-    photo: ""
+    photo: "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&h=400&fit=crop"
   },
   {
     name: "David Park",
     role: "First-Time Buyer Expert",
+    experience: "8 years",
+    sales: "42 sales",
     bio: "David is passionate about helping first-time buyers navigate the market with confidence. His patient, educational approach has earned him a 100% client satisfaction rating.",
     phone: "(212) 555-0104",
     email: "david@aurarealty.com",
-    photo: ""
+    photo: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=400&h=400&fit=crop"
   },
   {
     name: "Jessica Taylor",
     role: "Marketing Director",
+    experience: "10 years",
+    sales: "N/A",
     bio: "Jessica leads Aura Realty's innovative marketing strategies, leveraging digital platforms and data analytics to ensure every listing reaches the right audience at the right time.",
     phone: "(213) 555-0106",
     email: "jessica@aurarealty.com",
-    photo: ""
+    photo: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=400&h=400&fit=crop&crop=face"
   },
   {
     name: "James Wilson",
     role: "Property Manager",
+    experience: "18 years",
+    sales: "N/A",
     bio: "James oversees Aura Realty's property management division, ensuring every rental property is maintained to the highest standards while maximizing returns for property owners.",
     phone: "(305) 555-0107",
     email: "james@aurarealty.com",
-    photo: ""
+    photo: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop"
   }
 ];
 

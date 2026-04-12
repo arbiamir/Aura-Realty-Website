@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Browse recently sold homes in top neighborhoods. See sale prices, market trends, and neighborhood insights with Aura Realty.">
+  <title>Just Sold Homes — Aura Realty</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Stylesheet -->
+  <link rel="icon" href="images/favicon.png" type="image/png">
+  <link rel="stylesheet" href="css/style.css?v=6">
+</head>
+<body>
+
+  <!-- ================================================================
+       SITE HEADER
+       ================================================================ -->
+  <header class="site-header" id="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="logo">
+        <div class="logo-icon"><i class="fas fa-gem"></i></div>
+        <span class="logo-text">Aura<span>Realty</span></span>
+      </a>
+      <nav class="nav-links" id="nav-links">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="listings.html" class="nav-link">Listings</a>
+        <a href="sold-homes.html" class="nav-link">Sold Homes</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="services.html" class="nav-link">Services</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+      <div class="header-actions">
+        <button class="auth-login-btn" data-open-modal="login-modal">Sign In</button>
+        <a href="#" class="btn btn--primary btn--sm auth-register-btn" data-open-modal="register-modal">Join Now</a>
+        <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle menu">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ================================================================
+       HERO SECTION — Realtor.com Sold Homes Style
+       ================================================================ -->
+  <section class="hero hero--sold" id="hero">
+    <div class="hero-content">
+      <div class="hero-badge"><i class="fas fa-chart-line"></i> Market Intelligence</div>
+      <h1>Research <span>Recently Sold</span> Homes</h1>
+      <p>Explore recently sold properties in your area. Understand market trends, compare prices, and make smarter real estate decisions.</p>
+
+      <!-- Hero Search Box with Tabs -->
+      <div class="hero-search-wrapper">
+        <div class="hero-search-tabs">
+          <a href="index.html" class="hero-tab">Buy</a>
+          <a href="index.html" class="hero-tab">Rent</a>
+          <a href="index.html" class="hero-tab">Sell</a>
+          <a href="index.html" class="hero-tab">Pre-approval</a>
+          <button class="hero-tab active">Just sold</button>
+          <a href="index.html" class="hero-tab">Home value</a>
+        </div>
+
+        <div class="hero-panels-container">
+          <div class="hero-pane active" id="pane-justsold-search">
+            <form class="hero-pane-form" onsubmit="event.preventDefault();">
+              <div class="hero-pane-input-group">
+                <div class="hero-pane-input flex-grow">
+                  <input type="text" name="location" placeholder="Address, School, City, Zip or Neighborhood" autocomplete="off" id="sold-search-input">
+                </div>
+                <button type="submit" class="btn btn--primary btn--icon" id="sold-search-btn"><i class="fas fa-search"></i></button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================================================================
+       SOLD LISTINGS GRID
+       ================================================================ -->
+  <section class="section" id="sold-listings">
+    <div class="container">
+      <div class="section-header animate-on-scroll">
+        <span class="section-header__tag">Recent Sales</span>
+        <h2>Properties Sold by Aura Realty</h2>
+        <p>Our track record speaks for itself. Here are some of our recent closings.</p>
+      </div>
+      <div class="listings-grid grid-view animate-on-scroll" id="sold-grid">
+        <!-- Rendered by JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ================================================================
+       PRE-APPROVAL CTA — "Need a home loan?" Section
+       ================================================================ -->
+  <section class="section section--gray" id="preapproval-cta">
+    <div class="container">
+      <div class="preapproval-banner animate-on-scroll">
+        <div class="preapproval-banner__image">
+          <img src="https://images.unsplash.com/photo-1560520653-9e0e4c89eb11?w=600&h=400&fit=crop" alt="Get pre-approved for a home loan" loading="lazy">
+        </div>
+        <div class="preapproval-banner__content">
+          <h2>Need a Home Loan?</h2>
+          <p>Get pre-approved in minutes. Our partnered lenders offer competitive rates and a seamless application process so you can shop with confidence.</p>
+          <ul class="split-checklist">
+            <li><i class="fas fa-check-circle"></i> Quick online application</li>
+            <li><i class="fas fa-check-circle"></i> Competitive interest rates</li>
+            <li><i class="fas fa-check-circle"></i> Expert guidance from start to close</li>
+          </ul>
+          <a href="contact.html" class="btn btn--primary btn--lg">Get Pre-Approved <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================================================================
+       GET LOCAL INFO — Schools, Area Info
+       ================================================================ -->
+  <section class="section" id="local-info">
+    <div class="container">
+      <div class="section-header animate-on-scroll">
+        <span class="section-header__tag">Local Insights</span>
+        <h2>Get Local Info</h2>
+        <p>Explore school ratings, neighborhood details, and community highlights for the areas you're interested in.</p>
+      </div>
+
+      <div class="local-info-grid animate-on-scroll">
+        <div class="local-info-card">
+          <div class="local-info-card__icon"><i class="fas fa-school"></i></div>
+          <h3>Top-Rated Schools</h3>
+          <p>Find homes near the best public and private schools. We provide ratings, test scores, and student-teacher ratios for every listing.</p>
+          <a href="services.html" class="split-cta">Explore Schools <i class="fas fa-arrow-right"></i></a>
+        </div>
+        <div class="local-info-card">
+          <div class="local-info-card__icon"><i class="fas fa-chart-area"></i></div>
+          <h3>Market Trends</h3>
+          <p>Stay ahead with real-time data on median prices, days on market, and inventory levels in your target neighborhoods.</p>
+          <a href="listings.html" class="split-cta">View Trends <i class="fas fa-arrow-right"></i></a>
+        </div>
+        <div class="local-info-card">
+          <div class="local-info-card__icon"><i class="fas fa-map-marked-alt"></i></div>
+          <h3>Neighborhood Guide</h3>
+          <p>Discover walkability scores, commute times, local amenities, parks, and the overall vibe of each community.</p>
+          <a href="services.html" class="split-cta">Explore Areas <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================================================================
+       CTA — Newsletter signup
+       ================================================================ -->
+  <section class="cta-section">
+    <div class="container">
+      <h2>Stay Ahead of the Market</h2>
+      <p>Subscribe to receive exclusive listings, market reports, and insider tips.</p>
+      <form class="newsletter-form" id="newsletter-form">
+        <input type="email" placeholder="Enter your email address" required>
+        <button type="submit" class="btn">Subscribe <i class="fas fa-paper-plane"></i></button>
+      </form>
+    </div>
+  </section>
+
+  <!-- ================================================================
+       FOOTER
+       ================================================================ -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="logo">
+            <div class="logo-icon"><i class="fas fa-gem"></i></div>
+            <span class="logo-text">Aura<span>Realty</span></span>
+          </a>
+          <p>Your trusted partner in luxury real estate. We help you find the perfect property that matches your lifestyle and aspirations.</p>
+          <div class="footer-social">
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+        <div class="footer-column">
+          <h4>Quick Links</h4>
+          <a href="index.html">Home</a>
+          <a href="listings.html">Listings</a>
+        <a href="sold-homes.html" class="nav-link">Sold Homes</a>
+          <a href="about.html">About Us</a>
+          <a href="services.html">Services</a>
+          <a href="contact.html">Contact</a>
+        </div>
+        <div class="footer-column">
+          <h4>Services</h4>
+          <a href="services.html">Residential Sales</a>
+          <a href="services.html">Commercial Real Estate</a>
+          <a href="services.html">Property Management</a>
+          <a href="services.html">Investment Advisory</a>
+          <a href="services.html">Relocation Services</a>
+        </div>
+        <div class="footer-column">
+          <h4>Contact</h4>
+          <a href="tel:+13055550100"><i class="fas fa-phone"></i> (305) 555-0100</a>
+          <a href="mailto:info@aurarealty.com"><i class="fas fa-envelope"></i> info@aurarealty.com</a>
+          <a href="#"><i class="fas fa-map-marker-alt"></i> 1234 Brickell Ave, Suite 500<br>&nbsp;&nbsp;&nbsp;&nbsp;Miami, FL 33131</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 Aura Realty. All rights reserved.</span>
+        <div class="footer-legal">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+          <a href="#">Accessibility</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ================================================================
+       SCRIPTS
+       ================================================================ -->
+  <script src="js/data.js"></script>
+  <script src="js/app.js?v=3"></script>
+  <script>
+    // Render sold properties on this page
+    document.addEventListener('DOMContentLoaded', () => {
+      const grid = document.getElementById('sold-grid');
+      if (!grid || typeof PROPERTIES === 'undefined') return;
+
+      const soldProperties = PROPERTIES.filter(p => p.category === 'sold');
+
+      function renderSoldGrid(properties) {
+        grid.innerHTML = '';
+        if (properties.length === 0) {
+          grid.innerHTML = '<div class="no-results"><i class="fas fa-home"></i><h3>No recently sold homes found</h3><p>Try a different search or check back soon.</p></div>';
+          return;
+        }
+        properties.forEach(p => {
+          const card = createPropertyCard(p);
+          const badge = card.querySelector('.property-card__badge');
+          if (badge) {
+            badge.textContent = 'Sold';
+            badge.style.background = '#6b7280';
+          }
+          const priceEl = card.querySelector('.property-card__price');
+          if (priceEl && p.soldDate) {
+            priceEl.innerHTML = formatPrice(p.soldPrice || p.price) + ' <small style="font-size:12px;color:#6b7280;font-weight:400;">Sold ' + new Date(p.soldDate).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' }) + '</small>';
+          }
+          grid.appendChild(card);
+        });
+      }
+
+      // Initial render
+      renderSoldGrid(soldProperties);
+
+      // Search bar filtering
+      const searchInput = document.getElementById('sold-search-input');
+      const searchBtn = document.getElementById('sold-search-btn');
+
+      function filterSold() {
+        const query = (searchInput?.value || '').toLowerCase().trim();
+        if (!query) {
+          renderSoldGrid(soldProperties);
+          return;
+        }
+        const filtered = soldProperties.filter(p =>
+          p.city.toLowerCase().includes(query) ||
+          p.state.toLowerCase().includes(query) ||
+          p.address.toLowerCase().includes(query) ||
+          p.zip.includes(query) ||
+          p.title.toLowerCase().includes(query)
+        );
+        renderSoldGrid(filtered);
+      }
+
+      if (searchBtn) searchBtn.addEventListener('click', filterSold);
+      if (searchInput) {
+        searchInput.addEventListener('keydown', (e) => { if (e.key === 'Enter') { e.preventDefault(); filterSold(); } });
+      }
+    });
+  </script>
+
+</body>
+</html>

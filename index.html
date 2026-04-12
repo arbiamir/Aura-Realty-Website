@@ -15,7 +15,8 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
   <!-- Stylesheet -->
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="images/favicon.png" type="image/png">
+  <link rel="stylesheet" href="css/style.css?v=6">
 </head>
 <body>
 
@@ -34,6 +35,7 @@
       <nav class="nav-links" id="nav-links">
         <a href="index.html" class="nav-link active">Home</a>
         <a href="listings.html" class="nav-link">Listings</a>
+        <a href="sold-homes.html" class="nav-link">Sold Homes</a>
         <a href="about.html" class="nav-link">About</a>
         <a href="services.html" class="nav-link">Services</a>
         <a href="contact.html" class="nav-link">Contact</a>
@@ -65,21 +67,141 @@
       <p>Explore thousands of luxury properties across the nation. Let our expert agents guide you to the home you've always dreamed of.</p>
 
       <!-- Hero Search Box -->
-      <div class="hero-search">
-        <form id="hero-search-form">
-          <div class="hero-search__input">
-            <i class="fas fa-search"></i>
-            <input type="text" name="location" placeholder="City, neighborhood, zip, or address" autocomplete="off">
+      <div class="hero-search-wrapper">
+        <div class="hero-search-tabs">
+          <button class="hero-tab active" data-tab="pane-buy">Buy</button>
+          <button class="hero-tab" data-tab="pane-rent">Rent</button>
+          <button class="hero-tab" data-tab="pane-sell">Sell</button>
+          <button class="hero-tab" data-tab="pane-preapproval">Pre-approval</button>
+          <button class="hero-tab" data-tab="pane-justsold">Just sold</button>
+          <button class="hero-tab" data-tab="pane-homevalue">Home value</button>
+        </div>
+
+        <div class="hero-panels-container">
+          <!-- Buy Pane -->
+          <div class="hero-pane active" id="pane-buy">
+            <form class="hero-pane-form" onsubmit="event.preventDefault(); window.location.href='listings.html';">
+              <div class="hero-pane-input-group">
+                <div class="hero-pane-input flex-grow">
+                  <input type="text" name="location" placeholder="Address, School, City, Zip or Neighborhood" autocomplete="off">
+                </div>
+                <div class="hero-pane-divider"></div>
+                <div class="hero-pane-select">
+                  <select name="price">
+                    <option value="">Price</option>
+                    <option value="min">Up to $500k</option>
+                    <option value="mid">$500k - $1M</option>
+                    <option value="max">$1M+</option>
+                  </select>
+                </div>
+                <div class="hero-pane-divider"></div>
+                <div class="hero-pane-select">
+                  <select name="beds">
+                    <option value="">Beds</option>
+                    <option value="1">1+ Beds</option>
+                    <option value="2">2+ Beds</option>
+                    <option value="3">3+ Beds</option>
+                    <option value="4">4+ Beds</option>
+                  </select>
+                </div>
+                <button type="submit" class="btn btn--primary btn--icon"><i class="fas fa-search"></i></button>
+              </div>
+            </form>
           </div>
-          <select class="hero-search__select" name="type">
-            <option value="">All Types</option>
-            <option value="House">House</option>
-            <option value="Condo">Condo</option>
-            <option value="Apartment">Apartment</option>
-            <option value="Townhouse">Townhouse</option>
-          </select>
-          <button type="submit" class="btn btn--primary"><i class="fas fa-search"></i> Search</button>
-        </form>
+
+          <!-- Rent Pane -->
+          <div class="hero-pane" id="pane-rent">
+            <form class="hero-pane-form" onsubmit="event.preventDefault(); window.location.href='listings.html?type=rent';">
+              <div class="hero-pane-input-group">
+                <div class="hero-pane-input flex-grow">
+                  <input type="text" name="location" placeholder="Address, School, City, Zip or Neighborhood" autocomplete="off">
+                </div>
+                <div class="hero-pane-divider"></div>
+                <div class="hero-pane-select">
+                  <select name="rent_price">
+                    <option value="">Price</option>
+                    <option value="tier1">Up to $1k/mo</option>
+                    <option value="tier2">$1k - $3k/mo</option>
+                    <option value="tier3">$3k+/mo</option>
+                  </select>
+                </div>
+                <div class="hero-pane-divider"></div>
+                <div class="hero-pane-select">
+                  <select name="beds">
+                    <option value="">Beds</option>
+                    <option value="1">1+ Beds</option>
+                    <option value="2">2+ Beds</option>
+                    <option value="3">3+ Beds</option>
+                  </select>
+                </div>
+                <button type="submit" class="btn btn--primary btn--icon"><i class="fas fa-search"></i></button>
+              </div>
+            </form>
+          </div>
+
+          <!-- Sell Pane -->
+          <div class="hero-pane" id="pane-sell">
+            <div class="hero-pane-content-box">
+              <div class="hero-pane-text-area">
+                <h3>List Your Property with Confidence</h3>
+                <p>Connect with expert agents to get the best price for your home.</p>
+              </div>
+              <div class="hero-pane-action-area">
+                 <button type="button" class="btn btn--primary">Find a Seller's Agent</button>
+                 <button type="button" class="btn btn--outline btn--white-bg">Pricing Guidance</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Pre-approval Pane -->
+          <div class="hero-pane" id="pane-preapproval">
+            <div class="hero-pane-content-box">
+              <div class="hero-pane-text-area">
+                <h3>Check Your Buying Power</h3>
+                <p>Get pre-approved in minutes by answering a few quick questions.</p>
+              </div>
+              <form class="hero-pane-form inline-flex-form" onsubmit="event.preventDefault();">
+                 <div class="hero-pane-input-group">
+                   <div class="hero-pane-input flex-grow">
+                     <i class="fas fa-map-marker-alt"></i>
+                     <input type="text" placeholder="Enter zip code to find lenders">
+                   </div>
+                   <button type="button" class="btn btn--primary">Get Started</button>
+                 </div>
+              </form>
+            </div>
+          </div>
+
+          <!-- Just Sold Pane -->
+          <div class="hero-pane" id="pane-justsold">
+            <form class="hero-pane-form" onsubmit="event.preventDefault(); window.location.href='listings.html?status=sold';">
+              <div class="hero-pane-input-group">
+                <div class="hero-pane-input flex-grow">
+                  <input type="text" name="location" placeholder="Recently sold neighborhood or zip" autocomplete="off">
+                </div>
+                <button type="submit" class="btn btn--primary btn--icon"><i class="fas fa-search"></i></button>
+              </div>
+            </form>
+          </div>
+
+          <!-- Home Value Pane -->
+          <div class="hero-pane" id="pane-homevalue">
+             <div class="hero-pane-content-box center-aligned">
+               <h3>Free Instant Home Valuation</h3>
+               <p>Find out how much your home is worth today.</p>
+               <form class="hero-pane-form simple-input-form" onsubmit="event.preventDefault();">
+                 <div class="hero-pane-input-group">
+                   <div class="hero-pane-input flex-grow">
+                     <i class="fas fa-map-marker-alt"></i>
+                     <input type="text" placeholder="Enter your home address" autocomplete="off">
+                   </div>
+                   <button type="button" class="btn btn--primary">Get Estimate</button>
+                 </div>
+               </form>
+             </div>
+          </div>
+
+        </div>
       </div>
 
       <!-- Hero Stats -->
@@ -164,6 +286,153 @@
   </section>
 
   <!-- ================================================================
+       SPLIT SECTIONS — Savills-inspired Premium Layout
+       Three alternating image + text panels with stat overlays,
+       layered floating images, and arrow CTA links.
+       ================================================================ -->
+
+  <!-- ── Section 1: Image Left / Text Right ── -->
+  <section class="split-section split-section--light" id="split-experts">
+    <div class="split-section__panel split-section__panel--image">
+
+      <!-- Primary large image -->
+      <div class="split-img-stack">
+        <div class="split-img-primary animate-on-scroll">
+          <img
+            src="https://images.unsplash.com/photo-1486325212027-8081e485255e?w=900&h=700&fit=crop"
+            alt="Modern city skyline at dusk"
+            loading="lazy">
+          <!-- Dark overlay stat badge — inspired by Savills "170 YEARS" block -->
+          <div class="split-img-overlay split-img-overlay--accent">
+            <span class="split-overlay__number">15+</span>
+            <span class="split-overlay__label">Years of<br>Best-in-Class<br>Expertise</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="split-section__panel split-section__panel--text animate-on-scroll">
+      <span class="split-tag">Our Expertise</span>
+      <h2 class="split-title">Trusted Real Estate<br>Experts</h2>
+      <div class="split-rule"></div>
+      <p class="split-desc">
+        Whether you're searching for the perfect family home, an investment
+        opportunity, or a luxury retreat, Aura Realty brings the market insight
+        and personalized attention your journey deserves. With a network
+        spanning 12 cities and over 2,500 active listings, our seasoned agents
+        turn complex decisions into confident ones — guiding you every step of
+        the way.
+      </p>
+      <a href="listings.html" class="split-cta">
+        Explore Our Listings <i class="fas fa-arrow-right"></i>
+      </a>
+    </div>
+  </section>
+
+  <!-- ── Section 2: Text Left / Image Right ── -->
+  <section class="split-section split-section--dark" id="split-why">
+    <div class="split-section__panel split-section__panel--text animate-on-scroll">
+      <span class="split-tag">Why Choose Us</span>
+      <h2 class="split-title">We're Good to<br>Know</h2>
+      <div class="split-rule"></div>
+      <p class="split-desc">
+        Over 50 specialist agents operate across our offices, bringing
+        hyper-local knowledge and a global perspective to every transaction.
+        Our breadth of coverage — combined with proprietary market analytics
+        and an unwavering client-first philosophy — means you'll always have
+        a trusted expert in your corner, no matter where you're looking.
+      </p>
+      <!-- Agent portrait — displayed above the statistics row.
+           Styled as a squircle (rounded square) with a subtle white border
+           so it pops against the dark navy background. -->
+      <div class="split-agent-portrait">
+        <img
+          src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=200&h=200&fit=crop&crop=face"
+          alt="Sarah Mitchell, Founder & CEO, Aura Realty"
+          loading="lazy">
+        <div class="split-agent-info">
+          <strong>Sarah Mitchell</strong>
+          <span>Founder &amp; CEO — 25 yrs experience</span>
+        </div>
+      </div>
+
+      <!-- Stat row -->
+      <div class="split-stats">
+        <div class="split-stat">
+          <span class="split-stat__number">2,500<sup>+</sup></span>
+          <span class="split-stat__label">Properties Listed</span>
+        </div>
+        <div class="split-stat">
+          <span class="split-stat__number">12</span>
+          <span class="split-stat__label">City Offices</span>
+        </div>
+        <div class="split-stat">
+          <span class="split-stat__number">99<sup>%</sup></span>
+          <span class="split-stat__label">Client Satisfaction</span>
+        </div>
+      </div>
+      <a href="about.html" class="split-cta">
+        Learn More About Us <i class="fas fa-arrow-right"></i>
+      </a>
+    </div>
+
+    <div class="split-section__panel split-section__panel--image">
+      <div class="split-img-stack split-img-stack--reverse">
+        <div class="split-img-primary animate-on-scroll">
+          <img
+            src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=900&h=700&fit=crop"
+            alt="Stunning modern luxury home exterior at dusk"
+            loading="lazy">
+          <div class="split-img-overlay split-img-overlay--accent">
+            <span class="split-overlay__number">50<sup>+</sup></span>
+            <span class="split-overlay__label">Expert Agents<br>Across 12 Cities</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Section 3: Image Left / Text Right ── -->
+  <section class="split-section split-section--light" id="split-journey">
+    <div class="split-section__panel split-section__panel--image">
+      <div class="split-img-stack">
+        <div class="split-img-primary animate-on-scroll">
+          <img
+            src="https://images.unsplash.com/photo-1583608205776-bfd35f0d9f83?w=900&h=700&fit=crop"
+            alt="New homeowners celebrating with keys"
+            loading="lazy">
+          <div class="split-img-overlay split-img-overlay--accent">
+            <span class="split-overlay__number">1,200<sup>+</sup></span>
+            <span class="split-overlay__label">Families<br>Placed in Their<br>Dream Homes</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="split-section__panel split-section__panel--text animate-on-scroll">
+      <span class="split-tag">Start Your Journey</span>
+      <h2 class="split-title">Your Property Journey<br>Starts Here</h2>
+      <div class="split-rule"></div>
+      <p class="split-desc">
+        From your very first enquiry to the moment you hold the keys, Aura
+        Realty provides a seamlessly guided experience tailored to your
+        unique goals. Our dedicated agents take time to understand your
+        lifestyle, budget, and vision — crafting a personalised property
+        roadmap that transforms your ambitions into reality.
+      </p>
+      <ul class="split-checklist">
+        <li><i class="fas fa-check-circle"></i> Dedicated personal agent assigned from day one</li>
+        <li><i class="fas fa-check-circle"></i> Curated property shortlists matched to your brief</li>
+        <li><i class="fas fa-check-circle"></i> Expert negotiation and end-to-end transaction support</li>
+      </ul>
+      <a href="contact.html" class="split-cta">
+        Contact Us Today <i class="fas fa-arrow-right"></i>
+      </a>
+    </div>
+  </section>
+
+  <!-- ================================================================
        NEIGHBORHOODS — Spotlight grid
        ================================================================ -->
   <section class="section" id="neighborhoods">
@@ -195,6 +464,13 @@
         <!-- Rendered by JS -->
       </div>
     </div>
+  </section>
+
+  <!-- ================================================================
+       APP DOWNLOAD CTA — Zameen-inspired Conversion Section
+       ================================================================ -->
+  <section class="app-download-banner" id="app-download">
+    <img src="images/app-download-banner.png" alt="Get the Aura Realty App">
   </section>
 
   <!-- ================================================================
@@ -238,6 +514,7 @@
           <h4>Quick Links</h4>
           <a href="index.html">Home</a>
           <a href="listings.html">Listings</a>
+        <a href="sold-homes.html" class="nav-link">Sold Homes</a>
           <a href="about.html">About Us</a>
           <a href="services.html">Services</a>
           <a href="contact.html">Contact</a>
@@ -362,8 +639,8 @@
   <!-- ================================================================
        SCRIPTS
        ================================================================ -->
-  <script src="js/data.js"></script>
-  <script src="js/app.js"></script>
+  <script src="js/data.js?v=2"></script>
+  <script src="js/app.js?v=3"></script>
 
 </body>
 </html>

@@ -274,7 +274,7 @@ function createPropertyCard(property) {
       ${property.featured ? '<span class="property-card__featured">Featured</span>' : ''}
     </div>
     <div class="property-card__content">
-      <div class="property-card__price">${formatPrice(property.price)}</div>
+      <div class="property-card__price">${formatPrice(property.price)}${property.category === 'rent' ? '<span style="font-size:14px;font-weight:400;color:#6b7280;">/mo</span>' : ''}</div>
       <div class="property-card__meta">
         <span><i class="fas fa-bed"></i> ${property.beds} bd</span>
         <span><i class="fas fa-bath"></i> ${property.baths} ba</span>
@@ -338,7 +338,7 @@ function showPropertyDetail(id) {
         <h3>Description</h3>
         <p class="property-detail__desc">${property.description}</p>
         <div class="property-detail__agent">
-          <div class="agent-avatar"><i class="fas fa-user-circle"></i></div>
+          <div class="agent-avatar">${property.agent.photo ? `<img src="${property.agent.photo}" alt="${property.agent.name}">` : '<i class="fas fa-user-circle"></i>'}</div>
           <div class="agent-info">
             <strong>${property.agent.name}</strong>
             <span>${property.agent.phone}</span>
@@ -443,7 +443,7 @@ function initTestimonials() {
       </div>
       <p class="testimonial-card__text">"${t.text}"</p>
       <div class="testimonial-card__author">
-        <div class="testimonial-avatar"><i class="fas fa-user-circle"></i></div>
+        <div class="testimonial-avatar">${t.photo ? `<img src="${t.photo}" alt="${t.name}">` : '<i class="fas fa-user-circle"></i>'}</div>
         <div>
           <strong>${t.name}</strong>
           <span>${t.location}</span>
@@ -644,11 +644,15 @@ function initTeamGrid() {
     card.className = 'team-card';
     card.innerHTML = `
       <div class="team-card__photo">
-        <i class="fas fa-user-circle"></i>
+        ${member.photo ? `<img src="${member.photo}" alt="${member.name}">` : '<i class="fas fa-user-circle"></i>'}
       </div>
       <h3>${member.name}</h3>
       <span class="team-card__role">${member.role}</span>
-      <p>${member.bio}</p>
+      <div class="team-card__stats">
+        <div><strong>${member.experience || 'N/A'}</strong><span>Experience</span></div>
+        ${member.sales && member.sales !== 'N/A' ? `<div><strong>${member.sales}</strong><span>In past year</span></div>` : ''}
+      </div>
+      <p class="team-card__bio">${member.bio}</p>
       <div class="team-card__contact">
         <a href="tel:${member.phone}"><i class="fas fa-phone"></i></a>
         <a href="mailto:${member.email}"><i class="fas fa-envelope"></i></a>
@@ -745,6 +749,176 @@ function initFilterToggle() {
   });
 }
 
+function initHeroTabs() {
+  const tabs = document.querySelectorAll('.hero-tab');
+  const panes = document.querySelectorAll('.hero-pane');
+  if (!tabs.length || !panes.length) return;
+
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      const targetPaneId = tab.getAttribute('data-tab');
+
+      // ── "Just Sold" → redirect to dedicated page ──
+      if (targetPaneId === 'pane-justsold') {
+        window.location.href = 'sold-homes.html';
+        return;
+      }
+
+      // 1. Toggle active visual state on tabs
+      tabs.forEach(t => t.classList.remove('active'));
+      tab.classList.add('active');
+
+      // 2. Hide all panes, show target pane
+      panes.forEach(pane => {
+        pane.classList.remove('active');
+        if (pane.id === targetPaneId) {
+          pane.classList.add('active');
+          const firstInput = pane.querySelector('input[type="text"]');
+          if (firstInput && !window.matchMedia('(max-width: 768px)').matches) {
+            firstInput.focus();
+          }
+        }
+      });
+
+      // 3. Filter carousel by category when Buy or Rent is clicked
+      if (targetPaneId === 'pane-buy') {
+        filterCarouselByCategory('buy');
+      } else if (targetPaneId === 'pane-rent') {
+        filterCarouselByCategory('rent');
+      }
+    });
+  });
+
+  // ── Sell tab button handlers ──
+  const sellPane = document.getElementById('pane-sell');
+  if (sellPane) {
+    const sellBtns = sellPane.querySelectorAll('.btn');
+    sellBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        // Scroll to contact section or redirect to services
+        const contactSection = document.getElementById('testimonials') || document.querySelector('.cta-section');
+        if (btn.textContent.includes('Agent')) {
+          window.location.href = 'about.html';
+        } else {
+          window.location.href = 'services.html';
+        }
+      });
+    });
+  }
+
+  // ── Pre-approval "Get Started" button handler ──
+  const preapprovalPane = document.getElementById('pane-preapproval');
+  if (preapprovalPane) {
+    const getStartedBtn = preapprovalPane.querySelector('.btn--primary');
+    if (getStartedBtn) {
+      getStartedBtn.addEventListener('click', () => {
+        window.location.href = 'contact.html';
+      });
+    }
+  }
+
+  // ── Home Value "Get Estimate" button handler ──
+  const homeValuePane = document.getElementById('pane-homevalue');
+  if (homeValuePane) {
+    const estimateBtn = homeValuePane.querySelector('.btn--primary');
+    if (estimateBtn) {
+      estimateBtn.addEventListener('click', () => {
+        const input = homeValuePane.querySelector('input');
+        if (input && input.value.trim()) {
+          alert(`Home valuation requested for: "${input.value.trim()}"\n\nOur agent will contact you within 24 hours with a detailed market analysis.`);
+          input.value = '';
+        } else if (input) {
+          input.focus();
+          input.style.outline = '2px solid var(--color-primary)';
+          setTimeout(() => input.style.outline = '', 2000);
+        }
+      });
+    }
+  }
+}
+
+/* ─── Carousel Filtering by Category ─── */
+
+/**
+ * Re-renders the featured carousel to only show properties
+ * matching the given category (buy / rent).
+ */
+function filterCarouselByCategory(category) {
+  const track = document.getElementById('carousel-track');
+  if (!track || typeof PROPERTIES === 'undefined') return;
+
+  // Clear current cards
+  track.innerHTML = '';
+
+  // Filter properties
+  const filtered = PROPERTIES.filter(p => {
+    if (category === 'buy') return p.category === 'buy' && p.featured;
+    if (category === 'rent') return p.category === 'rent';
+    return p.featured;
+  });
+
+  // If no featured results, show all of that category
+  const results = filtered.length > 0 ? filtered : PROPERTIES.filter(p => p.category === category);
+
+  results.forEach(p => track.appendChild(createPropertyCard(p)));
+
+  // Reset carousel position
+  track.style.transform = 'translateX(0)';
+
+  // Update section header
+  const sectionHeader = document.querySelector('#featured .section-header h2');
+  if (sectionHeader) {
+    if (category === 'rent') {
+      sectionHeader.textContent = 'Available Rentals';
+    } else {
+      sectionHeader.textContent = 'Handpicked Homes for You';
+    }
+  }
+
+  const sectionDesc = document.querySelector('#featured .section-header p');
+  if (sectionDesc) {
+    if (category === 'rent') {
+      sectionDesc.textContent = 'Explore our curated selection of premium rental properties across top neighborhoods.';
+    } else {
+      sectionDesc.textContent = 'Explore our curated selection of premium properties, chosen by our expert agents for their exceptional value and appeal.';
+    }
+  }
+}
+
+/* ─── Split Section Image Float Reveal ─── */
+
+/**
+ * Staggered entrance for floating image tiles inside split sections.
+ * Waits until the parent panel enters the viewport, then fades and
+ * slides the float tile in with a short delay.
+ */
+function initSplitSections() {
+  const floats = document.querySelectorAll('.split-img-float');
+  if (!floats.length) return;
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        // Slight delay driven by --delay CSS custom property on the element
+        const delay = parseFloat(getComputedStyle(entry.target).getPropertyValue('--delay') || '0') * 1000;
+        setTimeout(() => {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+        }, delay);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.2 });
+
+  floats.forEach(f => {
+    // Start hidden and shifted down
+    f.style.opacity = '0';
+    f.style.transform = 'translateY(24px)';
+    f.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+    observer.observe(f);
+  });
+}
+
 /* ─── Master Initialization ─── */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -759,6 +933,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Page-specific
   initHeroSearch();
+  initHeroTabs();
+  initSplitSections();
   initCarousel();
   initNeighborhoods();
   initTestimonials();
