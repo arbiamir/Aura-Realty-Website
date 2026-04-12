@@ -3245,11 +3245,26 @@ input, select, textarea, button {
 
 
   :root {
-    --header-height: 64px;
+    --header-height: 56px;
+  }
+
+  .site-header {
+    padding: 8px 0;
+  }
+
+  .logo-icon {
+    width: 32px;
+    height: 32px;
+    font-size: 16px;
+  }
+
+  .logo-text {
+    font-size: 18px;
   }
 
   .mobile-toggle {
     display: block;
+    font-size: 20px;
   }
 
   .nav-links {
@@ -3264,7 +3279,7 @@ input, select, textarea, button {
     align-items: center;
     justify-content: center;
     gap: var(--space-md);
-    z-index: 5;
+    z-index: 2000;
   }
 
   .nav-links.active {
@@ -3274,66 +3289,121 @@ input, select, textarea, button {
   .nav-link {
     font-size: 20px;
     padding: 12px 24px;
+    color: var(--color-gray-900);
   }
 
+  /* ─── Mobile Hero Overhaul ─── */
   .hero {
-    min-height: 550px;
-    padding: calc(var(--header-height) + 40px) var(--space-md) var(--space-xl);
+    min-height: auto;
+    padding: calc(var(--header-height) + 20px) 0 40px;
   }
 
   .hero h1 {
-    font-size: 28px;
+    font-size: 26px;
+    line-height: 1.2;
+    margin-bottom: var(--space-sm);
   }
 
   .hero p {
-    font-size: 16px;
+    font-size: 15px;
+    line-height: 1.4;
+    margin-bottom: var(--space-lg);
+    opacity: 0.9;
   }
 
+  .hero-badge {
+    padding: 4px 12px;
+    font-size: 11px;
+    margin-bottom: var(--space-md);
+  }
+
+  /* Realtor.com style tabs: flat text + underline */
+  .hero-search-tabs {
+    background: transparent;
+    padding: 0;
+    margin-bottom: var(--space-md);
+    justify-content: flex-start;
+    gap: var(--space-md);
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .hero-tab {
+    background: transparent !important;
+    color: rgba(255,255,255,0.8) !important;
+    border-radius: 0;
+    padding: 8px 4px;
+    font-size: 14px;
+    border-bottom: 3px solid transparent;
+    box-shadow: none !important;
+    transform: none !important;
+  }
+
+  .hero-tab.active {
+    color: var(--color-white) !important;
+    border-bottom-color: var(--color-white);
+    font-weight: 700;
+  }
+
+  /* Realtor.com style Pill Search Bar */
   .hero-pane-form {
-    border-radius: var(--radius-lg);
-    padding: var(--space-sm);
+    background: var(--color-white) !important;
+    border-radius: var(--radius-full) !important;
+    padding: 4px 4px 4px 16px !important;
+    box-shadow: var(--shadow-xl);
+    max-width: 100%;
   }
 
   .hero-pane-input-group {
-    flex-wrap: wrap;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    align-items: center;
+    gap: 0;
   }
 
+  .hero-pane-input input {
+    font-size: 14px;
+    padding: 10px 0;
+    background: transparent;
+    border: none !important;
+  }
+
+  /* Hide advanced selects on mobile hero for that clean look */
+  .hero-pane-select,
   .hero-pane-divider {
-    display: none;
+    display: none !important;
   }
 
-  .hero-pane-select {
-    width: 100%;
-  }
-
-  .hero-pane-content-box {
-    flex-direction: column;
-    text-align: center;
-    gap: var(--space-md);
-  }
-
-  .hero-pane-action-area {
-    flex-direction: column;
-    width: 100%;
-  }
-
-  .hero-pane-action-area .btn {
-    width: 100%;
-  }
-
-  .hero-pane-form.inline-flex-form {
-    min-width: auto;
-    width: 100%;
+  .btn--icon {
+    width: 42px;
+    height: 42px;
+    min-width: 42px;
+    border-radius: var(--radius-full);
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--color-primary);
   }
 
   .hero-stats {
-    gap: var(--space-xl);
+    margin-top: var(--space-xl);
+    padding: 0 var(--space-md);
+    justify-content: center;
+    gap: var(--space-lg);
   }
 
   .hero-stat__number {
-    font-size: 26px;
+    font-size: 22px;
   }
 
+  .hero-stat__label {
+    font-size: 11px;
+  }
+
+  /* General Resets */
   .section {
     padding: var(--space-2xl) 0;
   }
@@ -3345,6 +3415,7 @@ input, select, textarea, button {
   .services-grid,
   .values-grid {
     grid-template-columns: 1fr;
+    gap: var(--space-lg);
   }
 
   .footer-grid {
@@ -3392,30 +3463,6 @@ input, select, textarea, button {
     grid-template-columns: repeat(3, 1fr);
   }
 
-  .hero-pane-form {
-    padding: var(--space-xs);
-  }
-
-  .hero-search-tabs {
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    justify-content: flex-start;
-    padding-bottom: 8px;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;
-  }
-  .hero-search-tabs::-webkit-scrollbar {
-    display: none;
-  }
-  .hero-tab {
-    flex-shrink: 0;
-  }
-
-  .header-actions .auth-login-btn,
-  .header-actions .auth-register-btn {
-    display: none;
-  }
-
   .timeline-step {
     flex: 0 0 100%;
   }
@@ -3426,20 +3473,15 @@ input, select, textarea, button {
 }
 
 @media (max-width: 480px) {
-  .container {
-    padding: 0 var(--space-md);
+  .hero h1 {
+    font-size: 24px;
   }
-
-  .property-detail__features {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
+  
   .hero-stats {
     flex-wrap: wrap;
-    gap: var(--space-md);
   }
-
-  .process-timeline {
-    padding: 0;
+  
+  .hero-stat {
+    flex: 0 0 calc(50% - 16px);
   }
 }
