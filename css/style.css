@@ -3395,7 +3395,9 @@ input, select, textarea, button {
     border-bottom: 1px solid rgba(255,255,255,0.2);
     overflow-x: auto;
     flex-wrap: nowrap;
+    scrollbar-width: none; /* Hide scrollbar Firefox */
   }
+  .hero-search-tabs::-webkit-scrollbar { display: none; } /* Hide scrollbar Chrome/Safari */
 
   .hero-tab {
     background: transparent !important;
@@ -3404,6 +3406,18 @@ input, select, textarea, button {
     padding: 8px 4px;
     font-size: 14px;
     border-bottom: 3px solid transparent;
+    white-space: nowrap;
+    flex: 0 0 auto;
+  }
+
+  /* Hide extra tabs on mobile to match realtor.com minimal layout */
+  .hero-tab:nth-child(n+5) {
+    display: none !important;
+  }
+
+  /* Always show the active tab, even if it's an 'extra' one */
+  .hero-tab.active {
+    display: flex !important;
   }
 
   .hero-tab.active {
@@ -3416,12 +3430,25 @@ input, select, textarea, button {
     border-radius: var(--radius-full) !important;
     padding: 4px 4px 4px 16px !important;
     max-width: 100%;
+    margin: 0 auto;
   }
 
   .hero-pane-input-group {
+    display: flex !important;
     flex-direction: row !important;
     flex-wrap: nowrap !important;
     align-items: center;
+    width: 100%;
+  }
+
+  .hero-pane-input {
+    flex: 1;
+  }
+
+  .hero-pane-input input {
+    font-size: 15px; /* Prevent auto-zoom on iOS */
+    padding: 10px 0;
+    width: 100%;
   }
 
   .hero-pane-select, .hero-pane-divider {
